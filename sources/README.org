@@ -1,4 +1,4 @@
-#+title: Zisk (2024) 的古典日语形态素列表的 JSON 格式
+#+title: Zisk's (2024)  Glossing Conventions for Classical Japanese in JSON Format
 
 [[file:zisk-gloss-conventions.json]] is a JSON format for glossing
 Classical Japanese texts, following established linguistic
