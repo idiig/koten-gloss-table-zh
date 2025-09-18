@@ -1,26 +1,622 @@
 #+title:  Scripts for automated used glossing in json format document
 #+author: idiig
-* =generate_available_glosses=
+* =generate_glossary.sh=
+This script use regex to extract glosses from annotated text field
+  in json document.
+
+** INPUT: A json file with glossing
+
+#+begin_details
+#+begin_summary
+See example below
+#+end_summary
+#+begin_src json
+  {
+      "id": 1,
+      "koutei-yamagen": "男もすなる日記といふものを、女もしてみむとてするなり。",
+      "translation-zh": "听说是男性所做的叫日记的东西，但想着女性也做着试试吧，便做了。",
+      "phrase-gloss": [
+          {
+              "phrase": "男もすなる日記",
+              "gloss-zh": "（传闻）男人也做的日记",
+              "gloss-morph-zh": "男人=IFO 做-CCL HEV-ADN 日记",
+              "words": [
+  		{
+                      "word": "男",
+                      "gloss-zh": "男人",
+                      "gloss-morph-zh": "男人"
+  		},
+  		{
+                      "word": "も",
+                      "gloss-zh": "也",
+                      "gloss-morph-zh": "=IFO"
+  		},
+  		{
+                      "word": "す",
+                      "gloss-zh": "做",
+                      "gloss-morph-zh": "做-CCL"
+  		},
+  		{
+                      "word": "なる",
+                      "gloss-zh": "传闻...的",
+                      "gloss-morph-zh": "HEV-ADN"
+  		},
+  		{
+                      "word": "日記",
+                      "gloss-zh": "日记",
+                      "gloss-morph-zh": "日记"
+  		}
+              ]
+          },
+          {
+              "phrase": "といふものを",
+              "gloss-zh": "所谓的东西（让步）",
+              "gloss-morph-zh": "QUOT 说-ADN [物=ACC](=CON)",
+              "words": [
+                  {
+                      "word": "と",
+                      "gloss-zh": "（补语）",
+                      "gloss-morph-zh": "=CMP"
+                  },
+                  {
+                      "word": "いふ",
+                      "gloss-zh": "所谓的",
+                      "gloss-morph-zh": "说-ADN"
+                  },
+                  {
+                      "word": "もの",
+                      "gloss-zh": "东西",
+                      "gloss-morph-zh": "东西"
+                  },
+                  {
+                      "word": "を",
+                      "gloss-zh": "（让步）",
+                      "gloss-morph-zh": "=CON"
+                  }
+              ]
+          },
+          {
+              "phrase": "女もしてみむとてするなり",
+              "gloss-zh": "想着女人也做着试试吧，便做了",
+              "gloss-morph-zh": "女人=IFO 做-ADV=SEQ 试-ADV+VOL-CCL=SCM 做-ADN COP-CCL",
+              "words": [
+                  {
+                      "word": "女",
+                      "gloss-zh": "女人",
+                      "gloss-morph-zh": "女人"
+                  },
+                  {
+                      "word": "も",
+                      "gloss-zh": "也",
+                      "gloss-morph-zh": "=IFO"
+                  },
+                  {
+                      "word": "し",
+                      "gloss-zh": "做",
+                      "gloss-morph-zh": "做-ADV"
+                  },
+                  {
+                      "word": "て",
+                      "gloss-zh": "着",
+                      "gloss-morph-zh": "=SEQ"
+                  },
+                  {
+                      "word": "みむ",
+                      "gloss-zh": "试试吧",
+                      "gloss-morph-zh": "试-ADV+CJT"
+                  },
+                  {
+                      "word": "とて",
+                      "gloss-zh": "SCM",
+                      "gloss-morph-zh": "=SCM"
+                  },
+                  {
+                      "word": "する",
+                      "gloss-zh": "做",
+                      "gloss-morph-zh": "做-ADN"
+                  },
+                  {
+                      "word": "なり",
+                      "gloss-zh": "是",
+                      "gloss-morph-zh": "COP-CCL"
+                  }
+              ]
+          }
+      ],
+      "glossary-abbreviations": null,
+      "translation-zh-natural": "虽说日记通常是用男人写的东西，但我想试着用作为女人来写写看，于是便写下了这本日记。"
+  }
+  #+end_src
+#+end_details
+
+** Prossure
+*** Detect gloss abbvreviations
+For each glossed sentence, such as:
+#+begin_example
+  "gloss-morph-<lang_abbv>": "男人=IFO 做-CCL HEV-ADN 日记"
+#+end_example
+The script will extract glossing elements, such as:
+#+begin_example
+  Symbols and numbers:
+  =
+  -
+  
+  Abbreviations in upper case:
+  IFO
+  HEV
+  CCL
+  ADN
+#+end_example
+
+*** Search source ([[../sources/zisk-gloss-conventions-2024.json]])
+The source of abbreviations is from [[../sources/zisk-gloss-conventions.json][zisk-gloss-conventions.json]], which
+is a JSON file containing a list of abbreviations and their meanings
+in multiple languages.
+
+#+begin_details
+#+begin_summary
+See example below
+#+end_summary
+#+begin_src json
+  {
+    "glosses": [
+      {
+        "id": "T7-DES-001",
+        "gloss": "DES",
+        "forms": [
+          "‡-(a)baya"
+        ],
+        "category": "inflectional verb",
+        "gakko_bunpo_equivalent": [
+          "バヤ"
+        ],
+        "grammatical_function_en": "desiderative",
+        "grammatical_function_ja": "願望",
+        "grammatical_function_zh": "愿望"
+      },
+      {
+        "id": "T7-OPT-001",
+        "gloss": "OPT",
+        "forms": [
+          "†-(a)na",
+          "-(a)namu",
+          "†-(a)namo",
+          "†-(a)ne[mo]",
+          "†-(a)ni[mo]"
+        ],
+        "category": "inflectional verb",
+        "gakko_bunpo_equivalent": [
+          "ナ",
+          "ナム",
+          "ナモ",
+          "ネ",
+          "ネモ",
+          "ニ",
+          "ニモ"
+        ],
+        "grammatical_function_en": "optative",
+        "grammatical_function_ja": "希求",
+        "grammatical_function_zh": "希望/愿望"
+      },
+        ...
+    ]
+  }
+#+end_src
+#+end_details
+
+*** Generate glossary
+*** Script body
+
+#+begin_details
+#+begin_summary
+See example below
+#+end_summary
+#+begin_src shell :tangle ./generate_glossary.sh
+  #!/usr/bin/env bash
+  set -euo pipefail
+
+  # generate_glossary.sh
+  # Global glossary from an annotated JSON:
+  # - Tokens = codes of [A-Z0-9]+ with >=2 uppercase letters (ADN, AOR2, 1SG, 3PL, ...)
+  #            + ALL Unicode punctuation/symbol chars EXCEPT brackets (Ps/Pe excluded)
+  # - Deduplicate by `gloss`, sort, enrich from SOURCE
+  # - Unmatched keep null fields
+  # - Logs: by default count symbols in unmatched; use --no-log-symbols to exclude them
+  #
+  # Usage:
+  #   ./generate_glossary.sh INPUT.json [SOURCE.json] [--quiet|--verbose|--no-log-symbols]
+  # Stdout: JSON array of gloss objects
+
+  QUIET=0
+  VERBOSE=0
+  LOG_SYMBOLS=1   # include symbols in unmatched logging by default
+  INPUT=""
+  SRC_DEFAULT="../sources/zisk-gloss-conventions-2024.json"
+  SRC="$SRC_DEFAULT"
+
+  ARGS=()
+  for a in "$@"; do
+    case "$a" in
+      --quiet)           QUIET=1 ;;
+      --verbose)         VERBOSE=1 ;;
+      --no-log-symbols)  LOG_SYMBOLS=0 ;;
+      ,*) ARGS+=("$a") ;;
+    esac
+  done
+
+  if [[ ${#ARGS[@]} -lt 1 ]]; then
+    echo "Usage: $0 INPUT.json [SOURCE.json] [--quiet|--verbose|--no-log-symbols]" >&2
+    exit 1
+  fi
+  INPUT="${ARGS[0]}"
+  [[ ${#ARGS[@]} -ge 2 ]] && SRC="${ARGS[1]}"
+
+  command -v jq >/dev/null 2>&1 || { echo "Error: jq is required." >&2; exit 1; }
+  [[ -f "$INPUT" ]] || { echo "Error: input not found: $INPUT" >&2; exit 1; }
+  [[ -f "$SRC"   ]] || { echo "Error: source not found: $SRC" >&2; exit 1; }
+
+  PACKED="$(
+    jq --argjson logSymbols "$LOG_SYMBOLS" --slurpfile src "$SRC" '
+      # Load source as object
+      def SRC: ( ($src // []) | if length>0 then .[0] else {} end );
+
+      # Helper: is this single-char string a bracket (Unicode Ps or Pe)?
+      # NOTE: no "u" modifier; many jq builds already treat patterns as Unicode.
+      def is_bracket_char($c): ($c | test("^(\\p{Ps}|\\p{Pe})$"));
+
+      # Helper: token is pure symbol iff removing all \p{P} and \p{S} leaves empty
+      def is_symbol_token($s): ($s | gsub("[\\p{P}\\p{S}]"; "") == "");
+
+      # Extract tokens:
+      #  - Codes: [A-Z0-9]+ with >=2 uppercase letters (captures ADN, AOR2, 1SG, 3PL, ...)
+      #  - Symbols: all \p{P} or \p{S} chars, but EXCLUDE brackets (Ps/Pe)
+      def detect_tokens($x):
+        ( $x
+          | [ .. | objects | to_entries[] | select(.key | startswith("gloss-morph-")) | .value ]
+          | map(tostring) | join(" ")
+        ) as $t
+        | (
+            # Codes
+            ( $t
+              | gsub("[^A-Za-z0-9]+"; " ")
+              | split(" ")
+              | map(select( (test("^[A-Z0-9]+$"))
+                             and ( (gsub("[^A-Z]";"") | length) >= 2 ) ))
+            )
+            +
+            # Symbols except brackets
+            ( $t
+              | gsub("[^\\p{P}\\p{S}]"; "")  # keep punctuation+symbols
+              | explode
+              | map([.] | implode)
+              | map(select( is_bracket_char(.) | not ))
+            )
+          )
+        | unique
+        | sort ;
+
+      # Map token to record (null-valued if not found)
+      def lookup_obj($c):
+        (
+          SRC.glosses[]?
+          | select(.gloss == $c)
+          | {gloss, grammatical_function_en, grammatical_function_ja, grammatical_function_zh}
+        )
+        // {gloss: $c, grammatical_function_en: null, grammatical_function_ja: null, grammatical_function_zh: null};
+
+      ( detect_tokens(.) | map(lookup_obj(.)) | unique_by(.gloss) | sort_by(.gloss) ) as $gls
+
+      | ( $gls
+          | map(select(
+              (.grammatical_function_en==null)
+              and (.grammatical_function_ja==null)
+              and (.grammatical_function_zh==null)
+            ))
+          | ( if $logSymbols==1
+              then .                       # include symbols in unmatched logging
+              else map(select( ( .gloss | is_symbol_token(.) ) | not ))
+            end )
+          | map(.gloss)
+        ) as $unmatched
+
+      | { glossary: $gls,
+          log: { total: ($gls|length),
+                 unmatched_count: ($unmatched|length),
+                 unmatched: $unmatched } }
+    ' "$INPUT"
+  )"
+
+  # Emit glossary list
+  echo "$PACKED" | jq '.glossary'
+
+  # Conditional logs
+  if [[ "$QUIET" -eq 0 || "$VERBOSE" -eq 1 ]]; then
+    total=$(echo "$PACKED" | jq '.log.total')
+    umc=$(echo "$PACKED" | jq '.log.unmatched_count')
+    if [[ "$VERBOSE" -eq 1 || "$umc" -gt 0 ]]; then
+      echo "[INFO] Total tokens: $total" >&2
+      echo "[INFO] Unmatched count: $umc" >&2
+      if [[ "$umc" -gt 0 ]]; then
+        echo "$PACKED" | jq -r '.log.unmatched | join(",")' | while read -r line; do
+          [[ -n "$line" ]] && echo "[WARN] Unmatched tokens: $line" >&2
+        done
+      fi
+    fi
+  fi
+#+end_src
+#+end_details
+
+
+* =fill_glossary.sh=
   This script use regex to extract glosses from annotated text field
   in json document.
 
-  The output is as follows:
+** INPUT: A json file with glossing
+** Prossure 
+*** Detect gloss abbvreviations
+For each glossed sentence, such as:
+#+begin_example
+  "gloss-morph-<lang_abbv>": "男人=IFO 做-CCL HEV-ADN 日记"
+#+end_example
+The script will extract glossing elements, such as:
+#+begin_example
+  Symbols and numbers:
+  =
+  -
+  
+  Abbreviations in upper case:
+  IFO
+  HEV
+  CCL
+  ADN
+#+end_example
 
+*** Search source ([[../glossary.json]])
+The source of abbreviations is from [[../sources/zisk-gloss-conventions.json][zisk-gloss-conventions.json]], which
+is a JSON file containing a list of abbreviations and their meanings
+in multiple languages.
+
+#+begin_details
+#+begin_summary
+See example below
+#+end_summary
+#+begin_src json
+  [
+    {
+      "gloss": "+",
+      "grammatical_function_en": null,
+      "grammatical_function_ja": null,
+      "grammatical_function_zh": null
+    },
+    {
+      "gloss": "-",
+      "grammatical_function_en": null,
+      "grammatical_function_ja": null,
+      "grammatical_function_zh": null
+    },
+    {
+      "gloss": ".",
+      "grammatical_function_en": null,
+      "grammatical_function_ja": null,
+      "grammatical_function_zh": null
+    },
+    {
+      "gloss": "1SG",
+      "grammatical_function_en": null,
+      "grammatical_function_ja": null,
+      "grammatical_function_zh": null
+    },
+      ...
+  ]
+#+end_src
+#+end_details
+
+*** Output to =glossary-abbreviations= field
+
+For each detected glossing element, the script will fill the fields
+and output the contents into the original json file's
+=glossary-abbreviations= field, such as:
   #+begin_src json
-    [
+    ...
+    "glossary-abbreviations": [
         {
-    	"abbreviation": "1SG",
-    	"meaning-en": "",
-    	"meaning-zh": "",
-    	"meaning-ja": ""
+      "glosses": [
+        {
+          "gloss": "DES",
+          "grammatical_function_en": "desiderative",
+          "grammatical_function_ja": "願望",
+          "grammatical_function_zh": "愿望"
         },
         {
-    	"abbreviation": "CJT",
-    	"meaning-en": "",
-    	"meaning-zh": "",
-    	"meaning-ja": ""
+          "gloss": "OPT",
+          "grammatical_function_en": "optative",
+          "grammatical_function_ja": "希求",
+          "grammatical_function_zh": "希望/愿望"
         },
         ...
     ]
+    ...
   #+end_src
-* 
+
+*** Script body
+
+#+begin_details
+#+begin_summary
+See example below
+#+end_summary
+#+begin_src shell :tangle ./fill_glossary.sh
+  #!/usr/bin/env bash
+  set -euo pipefail
+
+  # fill_glossary.sh
+  # Per-paragraph update of "glossary-abbreviations" using a prebuilt glossary JSON (array).
+  #
+  # Tokens:
+  #   - Codes: [A-Z0-9]+ with >= 2 uppercase letters (e.g., ADN, AOR2, 1SG, 3PL)
+  #   - Symbols: ALL Unicode \p{P} or \p{S} chars, EXCEPT brackets (Ps/Pe)
+  #
+  # Behavior:
+  #   - Update ONLY objects that already have "glossary-abbreviations"
+  #   - Value becomes a flat array of gloss objects (dedup by .gloss)
+  #   - Unmatched keep null fields
+  #   - Logs to stderr ONLY if unmatched exist, or with --verbose
+  #   - Use --no-log-symbols to exclude symbols from "unmatched" stats/logs
+  #
+  # Usage:
+  #   ./fill_glossary.sh INPUT.json [GLOSSARY.json] [--quiet|--verbose|--no-log-symbols]
+  #   - Default glossary path: ../glossary.json  (output from generate_glossary.sh)
+
+  QUIET=0
+  VERBOSE=0
+  LOG_SYMBOLS=1   # include symbols in unmatched logging by default
+  INPUT=""
+  SRC_DEFAULT="../glossary.json"
+  SRC="$SRC_DEFAULT"
+
+  ARGS=()
+  for a in "$@"; do
+    case "$a" in
+      --quiet)           QUIET=1 ;;
+      --verbose)         VERBOSE=1 ;;
+      --no-log-symbols)  LOG_SYMBOLS=0 ;;
+      ,*) ARGS+=("$a") ;;
+    esac
+  done
+
+  if [[ ${#ARGS[@]} -lt 1 ]]; then
+    echo "Usage: $0 INPUT.json [GLOSSARY.json] [--quiet|--verbose|--no-log-symbols]" >&2
+    exit 1
+  fi
+  INPUT="${ARGS[0]}"
+  [[ ${#ARGS[@]} -ge 2 ]] && SRC="${ARGS[1]}"
+
+  command -v jq >/dev/null 2>&1 || { echo "Error: jq is required." >&2; exit 1; }
+  [[ -f "$INPUT" ]] || { echo "Error: input not found: $INPUT" >&2; exit 1; }
+  [[ -f "$SRC"   ]] || { echo "Error: glossary source not found: $SRC" >&2; exit 1; }
+
+  PACKED="$(
+    jq --argjson logSymbols "$LOG_SYMBOLS" --slurpfile src "$SRC" '
+      # Source is an array of gloss objects (first slurped element).
+      def SRCARR: ( ($src // []) | if length>0 then .[0] else [] end );
+
+      # Build a lookup dict: { GLOSS: {gloss, grammatical_function_*} }
+      def SRCDICT:
+        (reduce (SRCARR[]? // empty) as $g ({}; .[$g.gloss] = {
+          gloss: $g.gloss,
+          grammatical_function_en: ($g.grammatical_function_en // null),
+          grammatical_function_ja: ($g.grammatical_function_ja // null),
+          grammatical_function_zh: ($g.grammatical_function_zh // null)
+        }));
+
+      # Helpers
+      def is_bracket_char($c): ($c | test("^(\\p{Ps}|\\p{Pe})$"));
+      def is_symbol_token($s): ($s | gsub("[\\p{P}\\p{S}]"; "") == "");
+
+      # Extract tokens from an object (its subtree):
+      #  - Codes + Symbols (excluding brackets)
+      def detect_tokens($x):
+        ( $x
+          | [ .. | objects | to_entries[] | select(.key | startswith("gloss-morph-")) | .value ]
+          | map(tostring) | join(" ")
+        ) as $t
+        | (
+            # Codes: [A-Z0-9]+ with >=2 uppercase letters
+            ( $t
+              | gsub("[^A-Za-z0-9]+"; " ")
+              | split(" ")
+              | map(select( (test("^[A-Z0-9]+$"))
+                             and ( (gsub("[^A-Z]";"") | length) >= 2 ) ))
+            )
+            +
+            # Symbols except brackets
+            ( $t
+              | gsub("[^\\p{P}\\p{S}]"; "")
+              | explode
+              | map([.] | implode)
+              | map(select( is_bracket_char(.) | not ))
+            )
+          )
+        | unique
+        | sort ;
+
+      # Map token via SRCDICT; if missing, create null-valued entry
+      def map_token($c):
+        ( SRCDICT[$c] ) // {gloss: $c, grammatical_function_en: null, grammatical_function_ja: null, grammatical_function_zh: null};
+
+      # Update only objects that already have the key, preserving position
+      def annotate:
+        if type=="object" then
+          if has("glossary-abbreviations") then
+            . as $o
+            | .["glossary-abbreviations"]
+              = ( detect_tokens($o) | map(map_token(.)) | unique_by(.gloss) )
+          else
+            with_entries(.value |= annotate)
+          end
+        elif type=="array" then map(annotate) else . end;
+
+      # Collect per-paragraph unmatched after annotation
+      def collect_logs:
+        if type=="object" then
+          (
+            if has("glossary-abbreviations") and (.["glossary-abbreviations"] | type=="array") then
+              . as $obj
+              | (.["glossary-abbreviations"]) as $arr
+              | ($arr
+                  | map(select(
+                      (.grammatical_function_en==null)
+                      and (.grammatical_function_ja==null)
+                      and (.grammatical_function_zh==null)
+                    ))
+                  | ( if $logSymbols==1
+                      then .
+                      else map(select( ( .gloss | is_symbol_token(.) ) | not ))
+                    end )
+                  | map(.gloss)
+                ) as $unmatched
+              | [{
+                  id: ($obj.id // null),
+                  unmatched_count: ($unmatched | length),
+                  unmatched: $unmatched
+                }]
+            else [] end
+          )
+          + ( [ .[]? | collect_logs ] | add // [] )
+        elif type=="array" then ( [ .[] | collect_logs ] | add // [] ) else [] end;
+
+      ( . as $orig
+      | ( $orig | annotate ) as $doc
+      | { doc: $doc, log: ($doc | collect_logs) }
+      )
+    ' "$INPUT"
+  )"
+
+  # STDOUT: updated JSON
+  echo "$PACKED" | jq '.doc'
+
+  # STDERR: logs (only when unmatched exist or --verbose)
+  if [[ "$QUIET" -eq 0 || "$VERBOSE" -eq 1 ]]; then
+    total_unm=$(echo "$PACKED" | jq '[.log[].unmatched_count] | add // 0')
+    if [[ "$VERBOSE" -eq 1 || "$total_unm" -gt 0 ]]; then
+      total_para=$(echo "$PACKED" | jq '.log | length')
+      echo "[INFO] Paragraphs updated: $total_para" >&2
+      echo "[INFO] Unmatched entries (sum): $total_unm" >&2
+      if [[ "$total_unm" -gt 0 ]]; then
+        idx=0
+        echo "$PACKED" | jq -r '
+          .log[] | [
+            ( .id // "N/A" ),
+            .unmatched_count,
+            ( ( .unmatched // [] ) | join(",") )
+          ] | @tsv
+        ' | while IFS=$'\t' read -r pid cunm unmlist; do
+          [[ "$pid" == "N/A" ]] && pid="idx:$idx"
+          echo "[WARN] Paragraph ${pid} unmatched=${cunm}${unmlist:+  (unmatched: ${unmlist})}" >&2
+          idx=$((idx+1))
+        done
+      fi
+    fi
+  fi
+#+end_src
+#+end_details
+
