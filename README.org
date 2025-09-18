@@ -2,7 +2,9 @@
 #+author: idiig
 
 This repository provides a JSON format for glossing Classical Japanese
-texts, following established linguistic conventions.
+texts, following established linguistic conventions mainly focused on
+the translation of Classical Japanese texts into English, Chinese
+(e.g., the [[https://github.com/idiig/tosa-nikki-chinese-translation/tree/master][Tosa Nikki/Tosa Diary]] Chinese translation).
 
 Based on the following references:
 
@@ -18,4 +20,4 @@ Based on the following references:
 - [[https://michinorishimoji.github.io/searchgloss/][下地 理則 (Shimoji, Michinori) (2025). SearchGloss (Version
   1.0). DOI: 10.5281/zenodo.16419404.]]
 
-This is for personal use. Use at your own risk.  
+This is originally for personal use. Use at your own risk.  
