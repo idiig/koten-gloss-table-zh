@@ -1,0 +1,2366 @@
+{
+  "glosses": [
+    {
+      "id": "T7-DES-001",
+      "gloss": "DES",
+      "forms": [
+        "‡-(a)baya"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "バヤ"
+      ],
+      "grammatical_function_en": "desiderative",
+      "grammatical_function_ja": "願望",
+      "grammatical_function_zh": "愿望"
+    },
+    {
+      "id": "T7-OPT-001",
+      "gloss": "OPT",
+      "forms": [
+        "†-(a)na",
+        "-(a)namu",
+        "†-(a)namo",
+        "†-(a)ne[mo]",
+        "†-(a)ni[mo]"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ナ",
+        "ナム",
+        "ナモ",
+        "ネ",
+        "ネモ",
+        "ニ",
+        "ニモ"
+      ],
+      "grammatical_function_en": "optative",
+      "grammatical_function_ja": "希求",
+      "grammatical_function_zh": "希望/愿望"
+    },
+    {
+      "id": "T7-IMP-001",
+      "gloss": "IMP",
+      "forms": [
+        "-e",
+        "-yo",
+        "-ø"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "命令形"
+      ],
+      "grammatical_function_en": "imperative",
+      "grammatical_function_ja": "命令",
+      "grammatical_function_zh": "命令"
+    },
+    {
+      "id": "T7-DES-002",
+      "gloss": "DES",
+      "forms": [
+        "-(i)sika[mo ‡na]",
+        "‡-(i)siga[na]"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "シカモ",
+        "シカナ",
+        "シガ",
+        "シガナ"
+      ],
+      "grammatical_function_en": "desiderative",
+      "grammatical_function_ja": "願望",
+      "grammatical_function_zh": "愿望"
+    },
+    {
+      "id": "T7-PRH-001",
+      "gloss": "PRH",
+      "forms": [
+        "na ... -(i)so[†ne]",
+        "†na ... (i)"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ナ…ソ",
+        "ナ…ソネ",
+        "ナ…"
+      ],
+      "grammatical_function_en": "prohibitive",
+      "grammatical_function_ja": "禁止",
+      "grammatical_function_zh": "禁止"
+    },
+    {
+      "id": "T7-CCL-001",
+      "gloss": "CCL",
+      "forms": [
+        "-(r)u",
+        "-i"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "終止形"
+      ],
+      "grammatical_function_en": "conclusive",
+      "grammatical_function_ja": "終止形",
+      "grammatical_function_zh": "终止形"
+    },
+    {
+      "id": "T7-PRH-002",
+      "gloss": "PRH",
+      "forms": [
+        "-(r)una"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ナ"
+      ],
+      "grammatical_function_en": "prohibitive",
+      "grammatical_function_ja": "禁止",
+      "grammatical_function_zh": "禁止"
+    },
+    {
+      "id": "T7-EVD-001",
+      "gloss": "EVD",
+      "forms": [
+        "‡-(r)urasi"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ラシ"
+      ],
+      "grammatical_function_en": "evidential",
+      "grammatical_function_ja": "証拠",
+      "grammatical_function_zh": "证据"
+    },
+    {
+      "id": "T7-ADN-001",
+      "gloss": "ADN",
+      "forms": [
+        "-(r)u"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "連体形"
+      ],
+      "grammatical_function_en": "adnominal",
+      "grammatical_function_ja": "連体形",
+      "grammatical_function_zh": "连体形"
+    },
+    {
+      "id": "T7-NCJ-001",
+      "gloss": "NCJ",
+      "forms": [
+        "-(a)zi"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ジ"
+      ],
+      "grammatical_function_en": "negative conjectural",
+      "grammatical_function_ja": "否定推量",
+      "grammatical_function_zh": "否定推量"
+    },
+    {
+      "id": "T7-HCD-001",
+      "gloss": "HCD",
+      "forms": [
+        "-(a)ba"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "バ"
+      ],
+      "grammatical_function_en": "hypothetical conditional",
+      "grammatical_function_ja": "仮定条件",
+      "grammatical_function_zh": "假定条件"
+    },
+    {
+      "id": "T7-NFC-001",
+      "gloss": "NFC",
+      "forms": [
+        "-(a)zupa"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ズハ"
+      ],
+      "grammatical_function_en": "negative focused conditional",
+      "grammatical_function_ja": "否定焦点条件",
+      "grammatical_function_zh": "否定焦点条件"
+    },
+    {
+      "id": "T7-NHC-001",
+      "gloss": "NHC",
+      "forms": [
+        "‡-(a)zuba"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ズバ"
+      ],
+      "grammatical_function_en": "negative hypothetical conditional",
+      "grammatical_function_ja": "否定仮定条件",
+      "grammatical_function_zh": "否定假定条件"
+    },
+    {
+      "id": "T7-NSE-001",
+      "gloss": "NSE",
+      "forms": [
+        "-(a)de"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "デ"
+      ],
+      "grammatical_function_en": "negative sequential",
+      "grammatical_function_ja": "否定継起",
+      "grammatical_function_zh": "否定继起"
+    },
+    {
+      "id": "T7-NFC-002",
+      "gloss": "NFC",
+      "forms": [
+        "-(a)depa"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "デハ"
+      ],
+      "grammatical_function_en": "negative focused conditional",
+      "grammatical_function_ja": "否定焦点条件",
+      "grammatical_function_zh": "否定焦点条件"
+    },
+    {
+      "id": "T7-NCC-001",
+      "gloss": "NCC",
+      "forms": [
+        "-(a)demo"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "デモ"
+      ],
+      "grammatical_function_en": "negative concessive",
+      "grammatical_function_ja": "否定譲歩",
+      "grammatical_function_zh": "否定让步"
+    },
+    {
+      "id": "T7-SER-001",
+      "gloss": "SER",
+      "forms": [
+        "-(i)ø"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "連用形"
+      ],
+      "grammatical_function_en": "serial",
+      "grammatical_function_ja": "連続",
+      "grammatical_function_zh": "连续"
+    },
+    {
+      "id": "T7-SEQ-001",
+      "gloss": "SEQ",
+      "forms": [
+        "-(i)te"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "テ"
+      ],
+      "grammatical_function_en": "sequential",
+      "grammatical_function_ja": "継起",
+      "grammatical_function_zh": "继起"
+    },
+    {
+      "id": "T7-FCD-001",
+      "gloss": "FCD",
+      "forms": [
+        "-(i)tepa"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "テハ"
+      ],
+      "grammatical_function_en": "focused conditional",
+      "grammatical_function_ja": "焦点条件",
+      "grammatical_function_zh": "焦点条件"
+    },
+    {
+      "id": "T7-HCC-001",
+      "gloss": "HCC",
+      "forms": [
+        "-(i)temo"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "テモ"
+      ],
+      "grammatical_function_en": "hypothetical concessive",
+      "grammatical_function_ja": "仮定譲歩",
+      "grammatical_function_zh": "假定让步"
+    },
+    {
+      "id": "T7-SIM-001",
+      "gloss": "SIM",
+      "forms": [
+        "-(i)nagara"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ナガラ"
+      ],
+      "grammatical_function_en": "simultaneous",
+      "grammatical_function_ja": "平行",
+      "grammatical_function_zh": "同时"
+    },
+    {
+      "id": "T7-ITR-001",
+      "gloss": "ITR",
+      "forms": [
+        "-(i)tutu"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ツツ"
+      ],
+      "grammatical_function_en": "iterative",
+      "grammatical_function_ja": "反復",
+      "grammatical_function_zh": "反复"
+    },
+    {
+      "id": "T7-PUR-001",
+      "gloss": "PUR",
+      "forms": [
+        "-(i)ni"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ニ"
+      ],
+      "grammatical_function_en": "purposive",
+      "grammatical_function_ja": "目的",
+      "grammatical_function_zh": "目的"
+    },
+    {
+      "id": "T7-UBQ-001",
+      "gloss": "UBQ",
+      "forms": [
+        "-(i)to"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ト"
+      ],
+      "grammatical_function_en": "ubiquitous",
+      "grammatical_function_ja": "遍在",
+      "grammatical_function_zh": "遍在"
+    },
+    {
+      "id": "T7-XCD-001",
+      "gloss": "XCD",
+      "forms": [
+        "-(r)eba",
+        "-kaba"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "バ"
+      ],
+      "grammatical_function_en": "fixed conditional",
+      "grammatical_function_ja": "確定条件",
+      "grammatical_function_zh": "确定条件"
+    },
+    {
+      "id": "T7-XCC-001",
+      "gloss": "XCC",
+      "forms": [
+        "-(r)edo[mo]"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ド",
+        "ドモ"
+      ],
+      "grammatical_function_en": "fixed concessive",
+      "grammatical_function_ja": "確定譲歩",
+      "grammatical_function_zh": "确定让步"
+    },
+    {
+      "id": "T7-NEG-001",
+      "gloss": "NEG",
+      "forms": [
+        "‡-(a)zu"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ズ"
+      ],
+      "grammatical_function_en": "negative",
+      "grammatical_function_ja": "否定",
+      "grammatical_function_zh": "否定"
+    },
+    {
+      "id": "T7-INC-001",
+      "gloss": "INC",
+      "forms": [
+        "-(r)e",
+        "-ka"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "已然形"
+      ],
+      "grammatical_function_en": "inconclusive",
+      "grammatical_function_ja": "非終止",
+      "grammatical_function_zh": "非终止"
+    },
+    {
+      "id": "T7-NML-001",
+      "gloss": "NML",
+      "forms": [
+        "-(i)ø"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "連用形名詞"
+      ],
+      "grammatical_function_en": "nominalizer",
+      "grammatical_function_ja": "名詞化辞",
+      "grammatical_function_zh": "名词化辞"
+    },
+    {
+      "id": "T7-NML-002",
+      "gloss": "NML",
+      "forms": [
+        "†-(r)aku"
+      ],
+      "category": "inflectional verb",
+      "gakko_bunpo_equivalent": [
+        "ク語法"
+      ],
+      "grammatical_function_en": "phrasal nominalizer",
+      "grammatical_function_ja": "句的名詞化辞",
+      "grammatical_function_zh": "句式名词化辞"
+    },
+    {
+      "id": "T8-NEG-001",
+      "gloss": "NEG",
+      "forms": [
+        "-(a)n-u^"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ヌ"
+      ],
+      "grammatical_function_en": "negative",
+      "grammatical_function_ja": "否定",
+      "grammatical_function_zh": "否定"
+    },
+    {
+      "id": "T8-NEG-002",
+      "gloss": "NEG",
+      "forms": [
+        "†-(a)zu-^"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ズ"
+      ],
+      "grammatical_function_en": "negative",
+      "grammatical_function_ja": "否定",
+      "grammatical_function_zh": "否定"
+    },
+    {
+      "id": "T8-NEG-003",
+      "gloss": "NEG",
+      "forms": [
+        "-(a)zar-iR"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ザリ"
+      ],
+      "grammatical_function_en": "negative",
+      "grammatical_function_ja": "否定",
+      "grammatical_function_zh": "否定"
+    },
+    {
+      "id": "T8-PAS-001",
+      "gloss": "PAS",
+      "forms": [
+        "-(r)ar-uIIe",
+        "†-(r)ay-uIIe"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ル",
+        "ラル",
+        "ラユ"
+      ],
+      "grammatical_function_en": "passive",
+      "grammatical_function_ja": "受身",
+      "grammatical_function_zh": "被动"
+    },
+    {
+      "id": "T8-CAU-001",
+      "gloss": "CAU",
+      "forms": [
+        "-(s)as-uIIe",
+        "-(a)sim-uIIe"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ス",
+        "サス",
+        "シム"
+      ],
+      "grammatical_function_en": "causative",
+      "grammatical_function_ja": "使役",
+      "grammatical_function_zh": "使役"
+    },
+    {
+      "id": "T8-PST-001",
+      "gloss": "PST",
+      "forms": [
+        "-(i)ki^",
+        "†-(i)ke-^",
+        "-(i)si^",
+        "-(i)se-^"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "キ"
+      ],
+      "grammatical_function_en": "past",
+      "grammatical_function_ja": "過去",
+      "grammatical_function_zh": "过去"
+    },
+    {
+      "id": "T8-RET-001",
+      "gloss": "RET",
+      "forms": [
+        "-(i)ker-iR"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ケリ"
+      ],
+      "grammatical_function_en": "retrospective",
+      "grammatical_function_ja": "回想",
+      "grammatical_function_zh": "回想"
+    },
+    {
+      "id": "T8-PCJ-001",
+      "gloss": "PCJ",
+      "forms": [
+        "-(i)kem-u"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ケム"
+      ],
+      "grammatical_function_en": "past conjectural",
+      "grammatical_function_ja": "過去推量",
+      "grammatical_function_zh": "过去推量"
+    },
+    {
+      "id": "T8-DUR-001",
+      "gloss": "DUR",
+      "forms": [
+        "†-(a)p-u"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "フ"
+      ],
+      "grammatical_function_en": "durative",
+      "grammatical_function_ja": "継続",
+      "grammatical_function_zh": "持续"
+    },
+    {
+      "id": "T8-STA-001",
+      "gloss": "STA",
+      "forms": [
+        "-(e)r-iR"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "リ"
+      ],
+      "grammatical_function_en": "stative",
+      "grammatical_function_ja": "既然",
+      "grammatical_function_zh": "静态"
+    },
+    {
+      "id": "T8-ATT-001",
+      "gloss": "ATT",
+      "forms": [
+        "-(i)t-uIIe"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ツ"
+      ],
+      "grammatical_function_en": "attainative",
+      "grammatical_function_ja": "達成",
+      "grammatical_function_zh": "达成"
+    },
+    {
+      "id": "T8-MNF-001",
+      "gloss": "MNF",
+      "forms": [
+        "-(i)n-uN"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ヌ"
+      ],
+      "grammatical_function_en": "manifestive",
+      "grammatical_function_ja": "実現",
+      "grammatical_function_zh": "实现"
+    },
+    {
+      "id": "T8-RSP-001",
+      "gloss": "RSP",
+      "forms": [
+        "†-(a)s-u"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ス"
+      ],
+      "grammatical_function_en": "respectful",
+      "grammatical_function_ja": "尊敬",
+      "grammatical_function_zh": "尊敬"
+    },
+    {
+      "id": "T8-CJT-001",
+      "gloss": "CJT",
+      "forms": [
+        "-(a)m-u",
+        "‡-(a)m",
+        "‡-(a)m[u]tos-uS",
+        "‡-(a)m[u]z-uS"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ム",
+        "ムトス",
+        "ムズ",
+        "ン",
+        "ントス",
+        "ンズ"
+      ],
+      "grammatical_function_en": "conjectural",
+      "grammatical_function_ja": "推量",
+      "grammatical_function_zh": "推量"
+    },
+    {
+      "id": "T8-CFT-001",
+      "gloss": "CFT",
+      "forms": [
+        "-(a)masi-^",
+        "(a)mase-^"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "マシ"
+      ],
+      "grammatical_function_en": "counterfactual",
+      "grammatical_function_ja": "反実仮想",
+      "grammatical_function_zh": "反事实假设"
+    },
+    {
+      "id": "T8-DES-001",
+      "gloss": "DES",
+      "forms": [
+        "‡-(a)mapo-siA"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "マホシ"
+      ],
+      "grammatical_function_en": "desiderative",
+      "grammatical_function_ja": "願望",
+      "grammatical_function_zh": "愿望"
+    },
+    {
+      "id": "T8-NDE-001",
+      "gloss": "NDE",
+      "forms": [
+        "‡-(a)mau-siA"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "マウシ"
+      ],
+      "grammatical_function_en": "negative desiderative",
+      "grammatical_function_ja": "否定願望",
+      "grammatical_function_zh": "否定愿望"
+    },
+    {
+      "id": "T8-DES-002",
+      "gloss": "DES",
+      "forms": [
+        "‡-(i)ta-siA"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "タシ"
+      ],
+      "grammatical_function_en": "desiderative",
+      "grammatical_function_ja": "願望",
+      "grammatical_function_zh": "愿望"
+    },
+    {
+      "id": "T8-OPT-001",
+      "gloss": "OPT",
+      "forms": [
+        "†-(i)kos-uIIe"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "コス"
+      ],
+      "grammatical_function_en": "optative",
+      "grammatical_function_ja": "希求",
+      "grammatical_function_zh": "希求"
+    },
+    {
+      "id": "T8-CJT-002",
+      "gloss": "CJT",
+      "forms": [
+        "-(r)uram-u"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ラム"
+      ],
+      "grammatical_function_en": "conjectural",
+      "grammatical_function_ja": "推量",
+      "grammatical_function_zh": "推量"
+    },
+    {
+      "id": "T8-NEC-001",
+      "gloss": "NEC",
+      "forms": [
+        "-(r)ube-siA",
+        "‡-(r)uberanar-iR"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ベシ",
+        "ベラナリ"
+      ],
+      "grammatical_function_en": "necessitive",
+      "grammatical_function_ja": "当然",
+      "grammatical_function_zh": "当然"
+    },
+    {
+      "id": "T8-NNE-001",
+      "gloss": "NNE",
+      "forms": [
+        "†-(r)umasiziA",
+        "‡-(r)umaziA"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "マシジ",
+        "マジ"
+      ],
+      "grammatical_function_en": "negative necessitive",
+      "grammatical_function_ja": "否定当然",
+      "grammatical_function_zh": "否定当然"
+    },
+    {
+      "id": "T8-EVD-001",
+      "gloss": "EVD",
+      "forms": [
+        "†-(r)urasi^"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ラシ"
+      ],
+      "grammatical_function_en": "evidential",
+      "grammatical_function_ja": "証拠",
+      "grammatical_function_zh": "证据"
+    },
+    {
+      "id": "T8-VEV-001",
+      "gloss": "VEV",
+      "forms": [
+        "-(r)umer-iR"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "メリ"
+      ],
+      "grammatical_function_en": "visual evidential",
+      "grammatical_function_ja": "目撃証拠",
+      "grammatical_function_zh": "目击证据"
+    },
+    {
+      "id": "T8-HEV-001",
+      "gloss": "HEV",
+      "forms": [
+        "-(r)unar-iR"
+      ],
+      "category": "derivational verb",
+      "gakko_bunpo_equivalent": [
+        "ナリ"
+      ],
+      "grammatical_function_en": "hearsay evidential",
+      "grammatical_function_ja": "伝聞証拠",
+      "grammatical_function_zh": "传闻证据"
+    },
+    {
+      "id": "T9-POT-001",
+      "gloss": "POT",
+      "forms": [
+        "ye-"
+      ],
+      "category": "verbal prefix",
+      "gakko_bunpo_equivalent": [
+        "エ"
+      ],
+      "grammatical_function_en": "potential",
+      "grammatical_function_ja": "可能",
+      "grammatical_function_zh": "可能"
+    },
+    {
+      "id": "T9-PPF-001",
+      "gloss": "PPF",
+      "forms": [
+        "uti-"
+      ],
+      "category": "verbal prefix",
+      "gakko_bunpo_equivalent": [
+        "ウチ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T9-PPF-002",
+      "gloss": "PPF",
+      "forms": [
+        "kaki-",
+        "kai-"
+      ],
+      "category": "verbal prefix",
+      "gakko_bunpo_equivalent": [
+        "カキ",
+        "カイ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T9-PPF-003",
+      "gloss": "PPF",
+      "forms": [
+        "mote-"
+      ],
+      "category": "verbal prefix",
+      "gakko_bunpo_equivalent": [
+        "モテ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T10-RSP-001",
+      "gloss": "RSP",
+      "forms": [
+        "tamap-u"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "タマフ"
+      ],
+      "grammatical_function_en": "respectful",
+      "grammatical_function_ja": "尊敬",
+      "grammatical_function_zh": "尊敬"
+    },
+    {
+      "id": "T10-RSP-002",
+      "gloss": "RSP",
+      "forms": [
+        "†mas-u"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "マス"
+      ],
+      "grammatical_function_en": "respectful",
+      "grammatical_function_ja": "尊敬",
+      "grammatical_function_zh": "尊敬"
+    },
+    {
+      "id": "T10-RSP-003",
+      "gloss": "RSP",
+      "forms": [
+        "‡asobas-u"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "アソバス"
+      ],
+      "grammatical_function_en": "respectful",
+      "grammatical_function_ja": "尊敬",
+      "grammatical_function_zh": "尊敬"
+    },
+    {
+      "id": "T10-HUM-001",
+      "gloss": "HUM",
+      "forms": [
+        "tamap-uIIe"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "タマフ"
+      ],
+      "grammatical_function_en": "humble",
+      "grammatical_function_ja": "謙譲",
+      "grammatical_function_zh": "谦让"
+    },
+    {
+      "id": "T10-HUM-002",
+      "gloss": "HUM",
+      "forms": [
+        "†matur-u"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "マツル"
+      ],
+      "grammatical_function_en": "humble",
+      "grammatical_function_ja": "謙譲",
+      "grammatical_function_zh": "谦让"
+    },
+    {
+      "id": "T10-POL-001",
+      "gloss": "POL",
+      "forms": [
+        "‡paber-iR"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "ハベリ"
+      ],
+      "grammatical_function_en": "polite",
+      "grammatical_function_ja": "丁寧",
+      "grammatical_function_zh": "礼貌"
+    },
+    {
+      "id": "T10-POL-002",
+      "gloss": "POL",
+      "forms": [
+        "‡saburap-u",
+        "‡samurap-u",
+        "‡saurap-u"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "サブラフ",
+        "サムラフ",
+        "サウラフ"
+      ],
+      "grammatical_function_en": "polite",
+      "grammatical_function_ja": "丁寧",
+      "grammatical_function_zh": "礼貌"
+    },
+    {
+      "id": "T10-REC-001",
+      "gloss": "REC",
+      "forms": [
+        "ap-u"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "アフ"
+      ],
+      "grammatical_function_en": "reciprocal",
+      "grammatical_function_ja": "相互",
+      "grammatical_function_zh": "相互"
+    },
+    {
+      "id": "T10-POT-001",
+      "gloss": "POT",
+      "forms": [
+        "(y)uIIe"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "ウ"
+      ],
+      "grammatical_function_en": "potential",
+      "grammatical_function_ja": "可能",
+      "grammatical_function_zh": "可能"
+    },
+    {
+      "id": "T10-NPO-001",
+      "gloss": "NPO",
+      "forms": [
+        "kan-uIIe"
+      ],
+      "category": "auxiliary verb",
+      "gakko_bunpo_equivalent": [
+        "カヌ"
+      ],
+      "grammatical_function_en": "negative potential",
+      "grammatical_function_ja": "否定可能",
+      "grammatical_function_zh": "否定可能"
+    },
+    {
+      "id": "T11-CCL-001",
+      "gloss": "CCL",
+      "forms": [
+        "-si",
+        "-ø"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "終止形"
+      ],
+      "grammatical_function_en": "conclusive",
+      "grammatical_function_ja": "終止形",
+      "grammatical_function_zh": "终止形"
+    },
+    {
+      "id": "T11-ADN-001",
+      "gloss": "ADN",
+      "forms": [
+        "-ki"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "連体形"
+      ],
+      "grammatical_function_en": "adnominal",
+      "grammatical_function_ja": "連体形",
+      "grammatical_function_zh": "连体形"
+    },
+    {
+      "id": "T11-SER-001",
+      "gloss": "SER",
+      "forms": [
+        "-ku"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "連用形"
+      ],
+      "grammatical_function_en": "serial",
+      "grammatical_function_ja": "連続",
+      "grammatical_function_zh": "连续"
+    },
+    {
+      "id": "T11-HCD-001",
+      "gloss": "HCD",
+      "forms": [
+        "-kupa"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "クハ",
+        "シクハ"
+      ],
+      "grammatical_function_en": "hypothetical conditional",
+      "grammatical_function_ja": "仮定条件",
+      "grammatical_function_zh": "假定条件"
+    },
+    {
+      "id": "T11-SEQ-001",
+      "gloss": "SEQ",
+      "forms": [
+        "-kute"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "クテ",
+        "シクテ"
+      ],
+      "grammatical_function_en": "sequential",
+      "grammatical_function_ja": "継起",
+      "grammatical_function_zh": "继起"
+    },
+    {
+      "id": "T11-FCD-001",
+      "gloss": "FCD",
+      "forms": [
+        "-kutepa"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "クテハ",
+        "シクテハ"
+      ],
+      "grammatical_function_en": "focused conditional",
+      "grammatical_function_ja": "焦点条件",
+      "grammatical_function_zh": "焦点条件"
+    },
+    {
+      "id": "T11-HCC-001",
+      "gloss": "HCC",
+      "forms": [
+        "-kutemo"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "クテモ",
+        "シクテモ"
+      ],
+      "grammatical_function_en": "hypothetical concessive",
+      "grammatical_function_ja": "仮定譲歩",
+      "grammatical_function_zh": "假定让步"
+    },
+    {
+      "id": "T11-HCC-002",
+      "gloss": "HCC",
+      "forms": [
+        "-ku[to]mo"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "クトモ",
+        "シクトモ",
+        "クモ"
+      ],
+      "grammatical_function_en": "hypothetical concessive",
+      "grammatical_function_ja": "仮定譲歩",
+      "grammatical_function_zh": "假定让步"
+    },
+    {
+      "id": "T11-XCD-001",
+      "gloss": "XCD",
+      "forms": [
+        "‡-kereba"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "ケレバ",
+        "シケレバ"
+      ],
+      "grammatical_function_en": "fixed conditional",
+      "grammatical_function_ja": "確定条件",
+      "grammatical_function_zh": "确定条件"
+    },
+    {
+      "id": "T11-XCC-001",
+      "gloss": "XCC",
+      "forms": [
+        "‡-keredo[mo]"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "ケレド",
+        "シケレド",
+        "ケレドモ",
+        "シケレドモ"
+      ],
+      "grammatical_function_en": "fixed concessive",
+      "grammatical_function_ja": "確定譲歩",
+      "grammatical_function_zh": "确定让步"
+    },
+    {
+      "id": "T11-SIM-001",
+      "gloss": "SIM",
+      "forms": [
+        "‡-nagara"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "ナガラ"
+      ],
+      "grammatical_function_en": "simultaneous",
+      "grammatical_function_ja": "平行",
+      "grammatical_function_zh": "同时"
+    },
+    {
+      "id": "T11-INC-001",
+      "gloss": "INC",
+      "forms": [
+        "‡-kere"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "已然形"
+      ],
+      "grammatical_function_en": "inconclusive",
+      "grammatical_function_ja": "非終止",
+      "grammatical_function_zh": "非终止"
+    },
+    {
+      "id": "T11-NML-001",
+      "gloss": "NML",
+      "forms": [
+        "-ku"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "連用形名詞"
+      ],
+      "grammatical_function_en": "nominalizer",
+      "grammatical_function_ja": "名詞化辞",
+      "grammatical_function_zh": "名词化辞"
+    },
+    {
+      "id": "T11-NML-002",
+      "gloss": "NML",
+      "forms": [
+        "-keku"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "ク語法"
+      ],
+      "grammatical_function_en": "phrasal nominalizer",
+      "grammatical_function_ja": "句的名詞化辞",
+      "grammatical_function_zh": "句式名词化辞"
+    },
+    {
+      "id": "T11-NML-003",
+      "gloss": "NML",
+      "forms": [
+        "-sa"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "サ"
+      ],
+      "grammatical_function_en": "qualitative nominalizer",
+      "grammatical_function_ja": "質的名詞化辞",
+      "grammatical_function_zh": "质的名词化辞"
+    },
+    {
+      "id": "T11-NML-004",
+      "gloss": "NML",
+      "forms": [
+        "-mi"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "ミ"
+      ],
+      "grammatical_function_en": "qualitative nominalizer",
+      "grammatical_function_ja": "質的名詞化辞",
+      "grammatical_function_zh": "质的名词化辞"
+    },
+    {
+      "id": "T11-CSL-001",
+      "gloss": "CSL",
+      "forms": [
+        "†-mi"
+      ],
+      "category": "inflectional adjective",
+      "gakko_bunpo_equivalent": [
+        "ミ語法"
+      ],
+      "grammatical_function_en": "causal nominalizer",
+      "grammatical_function_ja": "原因名詞化辞",
+      "grammatical_function_zh": "原因名词化辞"
+    },
+    {
+      "id": "T12-VBL-001",
+      "gloss": "VBL",
+      "forms": [
+        "†-ke-^"
+      ],
+      "category": "derivational adjective",
+      "gakko_bunpo_equivalent": [
+        "－"
+      ],
+      "grammatical_function_en": "verbalizer",
+      "grammatical_function_ja": "動詞化辞",
+      "grammatical_function_zh": "动词化辞"
+    },
+    {
+      "id": "T12-VBL-002",
+      "gloss": "VBL",
+      "forms": [
+        "-kar-iR"
+      ],
+      "category": "derivational adjective",
+      "gakko_bunpo_equivalent": [
+        "カリ",
+        "シカリ"
+      ],
+      "grammatical_function_en": "verbalizer",
+      "grammatical_function_ja": "動詞化辞",
+      "grammatical_function_zh": "动词化辞"
+    },
+    {
+      "id": "T12-EMO-001",
+      "gloss": "EMO",
+      "forms": [
+        "‡-gar-u"
+      ],
+      "category": "derivational adjective",
+      "gakko_bunpo_equivalent": [
+        "ガル"
+      ],
+      "grammatical_function_en": "emotional verbalizer",
+      "grammatical_function_ja": "感情的動詞化辞",
+      "grammatical_function_zh": "感情色动词化辞"
+    },
+    {
+      "id": "T13-PPF-001",
+      "gloss": "PPF",
+      "forms": [
+        "ka-"
+      ],
+      "category": "adjective prefix",
+      "gakko_bunpo_equivalent": [
+        "カ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T13-PPF-002",
+      "gloss": "PPF",
+      "forms": [
+        "ko-"
+      ],
+      "category": "adjective prefix",
+      "gakko_bunpo_equivalent": [
+        "コ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T13-PPF-003",
+      "gloss": "PPF",
+      "forms": [
+        "sa-"
+      ],
+      "category": "adjective prefix",
+      "gakko_bunpo_equivalent": [
+        "サ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T13-PPF-004",
+      "gloss": "PPF",
+      "forms": [
+        "ta-"
+      ],
+      "category": "adjective prefix",
+      "gakko_bunpo_equivalent": [
+        "タ"
+      ],
+      "grammatical_function_en": "prosodic prefix",
+      "grammatical_function_ja": "語調接頭辞",
+      "grammatical_function_zh": "语调接头辞"
+    },
+    {
+      "id": "T14-LAB-001",
+      "gloss": "LAB",
+      "forms": [
+        "gata-si"
+      ],
+      "category": "auxiliary adjective",
+      "gakko_bunpo_equivalent": [
+        "ガタシ"
+      ],
+      "grammatical_function_en": "laborative (difficult)",
+      "grammatical_function_ja": "困難",
+      "grammatical_function_zh": "困难"
+    },
+    {
+      "id": "T14-FCL-001",
+      "gloss": "FCL",
+      "forms": [
+        "yasu-si"
+      ],
+      "category": "auxiliary adjective",
+      "gakko_bunpo_equivalent": [
+        "ヤスシ"
+      ],
+      "grammatical_function_en": "facilitative (easy)",
+      "grammatical_function_ja": "容易",
+      "grammatical_function_zh": "容易"
+    },
+    {
+      "id": "T14-LAB-002",
+      "gloss": "LAB",
+      "forms": [
+        "‡niku-si"
+      ],
+      "category": "auxiliary adjective",
+      "gakko_bunpo_equivalent": [
+        "ニクシ"
+      ],
+      "grammatical_function_en": "laborative (difficult)",
+      "grammatical_function_ja": "困難",
+      "grammatical_function_zh": "困难"
+    },
+    {
+      "id": "T15-COP-001",
+      "gloss": "COP",
+      "forms": [
+        "=nar-iR"
+      ],
+      "category": "copula",
+      "gakko_bunpo_equivalent": [
+        "ナリ"
+      ],
+      "grammatical_function_en": "copula",
+      "grammatical_function_ja": "繋辞",
+      "grammatical_function_zh": "系词"
+    },
+    {
+      "id": "T15-COP-002",
+      "gloss": "COP",
+      "forms": [
+        "=tar-iR"
+      ],
+      "category": "copula",
+      "gakko_bunpo_equivalent": [
+        "タリ"
+      ],
+      "grammatical_function_en": "copula",
+      "grammatical_function_ja": "繋辞",
+      "grammatical_function_zh": "系词"
+    },
+    {
+      "id": "T15-SCO-001",
+      "gloss": "SCO",
+      "forms": [
+        "=goto-si^"
+      ],
+      "category": "copula",
+      "gakko_bunpo_equivalent": [
+        "ゴトシ"
+      ],
+      "grammatical_function_en": "similitude copula",
+      "grammatical_function_ja": "比況繋辞",
+      "grammatical_function_zh": "比况系词"
+    },
+    {
+      "id": "T16-GEN-001",
+      "gloss": "GEN",
+      "forms": [
+        "=ga"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ガ"
+      ],
+      "grammatical_function_en": "genitive",
+      "grammatical_function_ja": "属格",
+      "grammatical_function_zh": "属格"
+    },
+    {
+      "id": "T16-GEN-002",
+      "gloss": "GEN",
+      "forms": [
+        "=no"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ノ"
+      ],
+      "grammatical_function_en": "genitive",
+      "grammatical_function_ja": "属格",
+      "grammatical_function_zh": "属格"
+    },
+    {
+      "id": "T16-GEN-003",
+      "gloss": "GEN",
+      "forms": [
+        "†=tu"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ツ"
+      ],
+      "grammatical_function_en": "genitive",
+      "grammatical_function_ja": "属格",
+      "grammatical_function_zh": "属格"
+    },
+    {
+      "id": "T16-GEN-004",
+      "gloss": "GEN",
+      "forms": [
+        "†=na"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ナ"
+      ],
+      "grammatical_function_en": "genitive",
+      "grammatical_function_ja": "属格",
+      "grammatical_function_zh": "属格"
+    },
+    {
+      "id": "T16-ACC-001",
+      "gloss": "ACC",
+      "forms": [
+        "=wo"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ヲ"
+      ],
+      "grammatical_function_en": "accusative",
+      "grammatical_function_ja": "対格",
+      "grammatical_function_zh": "宾格"
+    },
+    {
+      "id": "T16-FAC-001",
+      "gloss": "FAC",
+      "forms": [
+        "=woba"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ヲバ"
+      ],
+      "grammatical_function_en": "focused accusative",
+      "grammatical_function_ja": "焦点対格",
+      "grammatical_function_zh": "焦点宾格"
+    },
+    {
+      "id": "T16-DAT-001",
+      "gloss": "DAT",
+      "forms": [
+        "=ni"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ニ"
+      ],
+      "grammatical_function_en": "dative",
+      "grammatical_function_ja": "与格",
+      "grammatical_function_zh": "与格"
+    },
+    {
+      "id": "T16-LOC-001",
+      "gloss": "LOC",
+      "forms": [
+        "=nite"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ニテ"
+      ],
+      "grammatical_function_en": "locative",
+      "grammatical_function_ja": "所格",
+      "grammatical_function_zh": "处所格"
+    },
+    {
+      "id": "T16-INS-001",
+      "gloss": "INS",
+      "forms": [
+        "=site"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "シテ"
+      ],
+      "grammatical_function_en": "instrumental",
+      "grammatical_function_ja": "具格",
+      "grammatical_function_zh": "工具格"
+    },
+    {
+      "id": "T16-ABL-001",
+      "gloss": "ABL",
+      "forms": [
+        "=kara"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "カラ"
+      ],
+      "grammatical_function_en": "ablative",
+      "grammatical_function_ja": "奪格",
+      "grammatical_function_zh": "夺格"
+    },
+    {
+      "id": "T16-ABL-002",
+      "gloss": "ABL",
+      "forms": [
+        "=yori",
+        "†=yo",
+        "†=yuri"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ヨリ",
+        "ヨ",
+        "ユリ"
+      ],
+      "grammatical_function_en": "ablative",
+      "grammatical_function_ja": "奪格",
+      "grammatical_function_zh": "夺格"
+    },
+    {
+      "id": "T16-TER-001",
+      "gloss": "TER",
+      "forms": [
+        "=made"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "マデ"
+      ],
+      "grammatical_function_en": "terminative",
+      "grammatical_function_ja": "終格",
+      "grammatical_function_zh": "终格"
+    },
+    {
+      "id": "T16-COM-001",
+      "gloss": "COM",
+      "forms": [
+        "=to"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ト"
+      ],
+      "grammatical_function_en": "comitative",
+      "grammatical_function_ja": "共格",
+      "grammatical_function_zh": "共格"
+    },
+    {
+      "id": "T16-ALL-001",
+      "gloss": "ALL",
+      "forms": [
+        "=pe"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ヘ"
+      ],
+      "grammatical_function_en": "allative",
+      "grammatical_function_ja": "向格",
+      "grammatical_function_zh": "向格"
+    },
+    {
+      "id": "T17-DIS-001",
+      "gloss": "DIS",
+      "forms": [
+        "=ka"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "カ"
+      ],
+      "grammatical_function_en": "disjunctive",
+      "grammatical_function_ja": "離接",
+      "grammatical_function_zh": "分离"
+    },
+    {
+      "id": "T17-CCP-001",
+      "gloss": "CCP",
+      "forms": [
+        "=to"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ト"
+      ],
+      "grammatical_function_en": "closed copulative",
+      "grammatical_function_ja": "並列",
+      "grammatical_function_zh": "并列"
+    },
+    {
+      "id": "T17-OCP-001",
+      "gloss": "OCP",
+      "forms": [
+        "=ya"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ヤ"
+      ],
+      "grammatical_function_en": "open copulative",
+      "grammatical_function_ja": "例示的並列",
+      "grammatical_function_zh": "例示并列"
+    },
+    {
+      "id": "T17-ADD-001",
+      "gloss": "ADD",
+      "forms": [
+        "=ni"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ニ"
+      ],
+      "grammatical_function_en": "additive",
+      "grammatical_function_ja": "添加",
+      "grammatical_function_zh": "添加"
+    },
+    {
+      "id": "T17-AVS-001",
+      "gloss": "AVS",
+      "forms": [
+        "=ga"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ガ"
+      ],
+      "grammatical_function_en": "adversative",
+      "grammatical_function_ja": "逆接",
+      "grammatical_function_zh": "逆接"
+    },
+    {
+      "id": "T17-CSL-001",
+      "gloss": "CSL",
+      "forms": [
+        "=ni",
+        "=nite"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ニ",
+        "ニテ"
+      ],
+      "grammatical_function_en": "causal",
+      "grammatical_function_ja": "原因",
+      "grammatical_function_zh": "原因"
+    },
+    {
+      "id": "T17-CSL-002",
+      "gloss": "CSL",
+      "forms": [
+        "=wo"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "ヲ"
+      ],
+      "grammatical_function_en": "causal",
+      "grammatical_function_ja": "原因",
+      "grammatical_function_zh": "原因"
+    },
+    {
+      "id": "T17-CON-001",
+      "gloss": "CON",
+      "forms": [
+        "=monowo",
+        "=monono",
+        "=monokara"
+      ],
+      "category": "syntactic particle",
+      "gakko_bunpo_equivalent": [
+        "モノヲ",
+        "モノノ",
+        "モノカラ"
+      ],
+      "grammatical_function_en": "concessive",
+      "grammatical_function_ja": "譲歩",
+      "grammatical_function_zh": "让步"
+    },
+    {
+      "id": "T18-TOP-001",
+      "gloss": "TOP",
+      "forms": [
+        "=pa"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "ハ"
+      ],
+      "grammatical_function_en": "topic",
+      "grammatical_function_ja": "主題",
+      "grammatical_function_zh": "主题"
+    },
+    {
+      "id": "T18-IFO-001",
+      "gloss": "IFO",
+      "forms": [
+        "=mo"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "モ"
+      ],
+      "grammatical_function_en": "inclusive focus",
+      "grammatical_function_ja": "包括的焦点",
+      "grammatical_function_zh": "包容性焦点"
+    },
+    {
+      "id": "T18-IND-001",
+      "gloss": "IND",
+      "forms": [
+        "=ka[pa ~ mo]"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "カ",
+        "カハ",
+        "カモ"
+      ],
+      "grammatical_function_en": "indefinite focus",
+      "grammatical_function_ja": "不定焦点",
+      "grammatical_function_zh": "不定焦点"
+    },
+    {
+      "id": "T18-IND-002",
+      "gloss": "IND",
+      "forms": [
+        "=ya[pa ~ mo]"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "ヤ",
+        "ヤハ",
+        "ヤモ"
+      ],
+      "grammatical_function_en": "indefinite focus",
+      "grammatical_function_ja": "不定焦点",
+      "grammatical_function_zh": "不定焦点"
+    },
+    {
+      "id": "T18-FOC-001",
+      "gloss": "FOC",
+      "forms": [
+        "=zo",
+        "†=so"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "ゾ",
+        "ソ"
+      ],
+      "grammatical_function_en": "definite focus",
+      "grammatical_function_ja": "確定焦点",
+      "grammatical_function_zh": "确定焦点"
+    },
+    {
+      "id": "T18-FOC-002",
+      "gloss": "FOC",
+      "forms": [
+        "†=namo",
+        "‡=namu",
+        "‡=naN"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "ナモ",
+        "ナム",
+        "ナン"
+      ],
+      "grammatical_function_en": "definite focus",
+      "grammatical_function_ja": "確定焦点",
+      "grammatical_function_zh": "确定焦点"
+    },
+    {
+      "id": "T18-FOC-003",
+      "gloss": "FOC",
+      "forms": [
+        "=koso"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "コソ"
+      ],
+      "grammatical_function_en": "definite focus",
+      "grammatical_function_ja": "確定焦点",
+      "grammatical_function_zh": "确定焦点"
+    },
+    {
+      "id": "T18-EMP-001",
+      "gloss": "EMP",
+      "forms": [
+        "=i"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "イ"
+      ],
+      "grammatical_function_en": "emphatic",
+      "grammatical_function_ja": "強意",
+      "grammatical_function_zh": "强调"
+    },
+    {
+      "id": "T18-EMP-002",
+      "gloss": "EMP",
+      "forms": [
+        "=si"
+      ],
+      "category": "information structure particle",
+      "gakko_bunpo_equivalent": [
+        "シ"
+      ],
+      "grammatical_function_en": "emphatic",
+      "grammatical_function_ja": "強意",
+      "grammatical_function_zh": "强调"
+    },
+    {
+      "id": "T19-ISO-001",
+      "gloss": "ISO",
+      "forms": [
+        "=nomi"
+      ],
+      "category": "auxiliary particle",
+      "gakko_bunpo_equivalent": [
+        "ノミ"
+      ],
+      "grammatical_function_en": "isolation",
+      "grammatical_function_ja": "孤独",
+      "grammatical_function_zh": "限定/单独"
+    },
+    {
+      "id": "T19-ISO-002",
+      "gloss": "ISO",
+      "forms": [
+        "=bakari"
+      ],
+      "category": "auxiliary particle",
+      "gakko_bunpo_equivalent": [
+        "バカリ"
+      ],
+      "grammatical_function_en": "isolation",
+      "grammatical_function_ja": "孤独",
+      "grammatical_function_zh": "限定/单独"
+    },
+    {
+      "id": "T19-ANL-001",
+      "gloss": "ANL",
+      "forms": [
+        "=dani"
+      ],
+      "category": "auxiliary particle",
+      "gakko_bunpo_equivalent": [
+        "ダニ"
+      ],
+      "grammatical_function_en": "negative-irrealis analogical",
+      "grammatical_function_ja": "未実現類推",
+      "grammatical_function_zh": "未实现类推"
+    },
+    {
+      "id": "T19-ANL-002",
+      "gloss": "ANL",
+      "forms": [
+        "=sura",
+        "‡=sora"
+      ],
+      "category": "auxiliary particle",
+      "gakko_bunpo_equivalent": [
+        "スラ",
+        "ソラ"
+      ],
+      "grammatical_function_en": "positive analogical",
+      "grammatical_function_ja": "肯定類推",
+      "grammatical_function_zh": "肯定类推"
+    },
+    {
+      "id": "T19-ANL-003",
+      "gloss": "ANL",
+      "forms": [
+        "=sape"
+      ],
+      "category": "auxiliary particle",
+      "gakko_bunpo_equivalent": [
+        "サヘ"
+      ],
+      "grammatical_function_en": "expanded analogical",
+      "grammatical_function_ja": "添加類推",
+      "grammatical_function_zh": "扩展类推"
+    },
+    {
+      "id": "T19-EXE-001",
+      "gloss": "EXE",
+      "forms": [
+        "=nado",
+        "‡=naNdo"
+      ],
+      "category": "auxiliary particle",
+      "gakko_bunpo_equivalent": [
+        "ナド",
+        "ナンド"
+      ],
+      "grammatical_function_en": "exemplificative",
+      "grammatical_function_ja": "例示",
+      "grammatical_function_zh": "举例"
+    },
+    {
+      "id": "T20-XCL-001",
+      "gloss": "XCL",
+      "forms": [
+        "=wo"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ヲ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-XCL-002",
+      "gloss": "XCL",
+      "forms": [
+        "=pa"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ハ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-XCL-003",
+      "gloss": "XCL",
+      "forms": [
+        "=mo"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "モ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-XCL-004",
+      "gloss": "XCL",
+      "forms": [
+        "=ka[mo ~ na]"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "カ",
+        "カモ",
+        "カナ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-OPT-001",
+      "gloss": "OPT",
+      "forms": [
+        "=moga[mo ~ na]"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "モガ",
+        "モガモ",
+        "モガナ"
+      ],
+      "grammatical_function_en": "optative",
+      "grammatical_function_ja": "希求",
+      "grammatical_function_zh": "希求"
+    },
+    {
+      "id": "T20-OPT-002",
+      "gloss": "OPT",
+      "forms": [
+        "=gana"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ガナ"
+      ],
+      "grammatical_function_en": "optative",
+      "grammatical_function_ja": "希求",
+      "grammatical_function_zh": "希求"
+    },
+    {
+      "id": "T20-OPT-003",
+      "gloss": "OPT",
+      "forms": [
+        "=gani"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ガニ"
+      ],
+      "grammatical_function_en": "optative",
+      "grammatical_function_ja": "希求",
+      "grammatical_function_zh": "希求"
+    },
+    {
+      "id": "T20-CNF-001",
+      "gloss": "CNF",
+      "forms": [
+        "=kasi"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "カシ"
+      ],
+      "grammatical_function_en": "confirmative",
+      "grammatical_function_ja": "確認",
+      "grammatical_function_zh": "确认"
+    },
+    {
+      "id": "T20-XCL-005",
+      "gloss": "XCL",
+      "forms": [
+        "=na"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ナ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-XCL-006",
+      "gloss": "XCL",
+      "forms": [
+        "=ya"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ヤ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-XCL-007",
+      "gloss": "XCL",
+      "forms": [
+        "=yo"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ヨ"
+      ],
+      "grammatical_function_en": "exclamative",
+      "grammatical_function_ja": "感嘆",
+      "grammatical_function_zh": "感叹"
+    },
+    {
+      "id": "T20-AFF-001",
+      "gloss": "AFF",
+      "forms": [
+        "=nomi"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ノミ"
+      ],
+      "grammatical_function_en": "affirmative",
+      "grammatical_function_ja": "断定",
+      "grammatical_function_zh": "断定"
+    },
+    {
+      "id": "T20-AFF-002",
+      "gloss": "AFF",
+      "forms": [
+        "=zo"
+      ],
+      "category": "discourse particle",
+      "gakko_bunpo_equivalent": [
+        "ゾ"
+      ],
+      "grammatical_function_en": "affirmative",
+      "grammatical_function_ja": "断定",
+      "grammatical_function_zh": "断定"
+    },
+    {
+      "id": "T21-HPF-001",
+      "gloss": "HPF",
+      "forms": [
+        "†opo-"
+      ],
+      "category": "nominal prefix",
+      "gakko_bunpo_equivalent": [
+        "オホ"
+      ],
+      "grammatical_function_en": "honorific prefix",
+      "grammatical_function_ja": "敬語接頭辞",
+      "grammatical_function_zh": "敬语接头辞"
+    },
+    {
+      "id": "T21-HPF-002",
+      "gloss": "HPF",
+      "forms": [
+        "mi-"
+      ],
+      "category": "nominal prefix",
+      "gakko_bunpo_equivalent": [
+        "ミ"
+      ],
+      "grammatical_function_en": "honorific prefix",
+      "grammatical_function_ja": "敬語接頭辞",
+      "grammatical_function_zh": "敬语接头辞"
+    },
+    {
+      "id": "T21-HPF-003",
+      "gloss": "HPF",
+      "forms": [
+        "opomi-",
+        "‡opoN-",
+        "‡oN-",
+        "‡o-"
+      ],
+      "category": "nominal prefix",
+      "gakko_bunpo_equivalent": [
+        "オホミ",
+        "オホン",
+        "オン",
+        "オ"
+      ],
+      "grammatical_function_en": "honorific prefix",
+      "grammatical_function_ja": "敬語接頭辞",
+      "grammatical_function_zh": "敬语接头辞"
+    },
+    {
+      "id": "T21-HPF-004",
+      "gloss": "HPF",
+      "forms": [
+        "go-",
+        "gyo-"
+      ],
+      "category": "nominal prefix",
+      "gakko_bunpo_equivalent": [
+        "ゴ",
+        "ギヨ",
+        "御"
+      ],
+      "grammatical_function_en": "honorific prefix",
+      "grammatical_function_ja": "敬語接頭辞",
+      "grammatical_function_zh": "敬语接头辞"
+    },
+    {
+      "id": "T21-ORD-001",
+      "gloss": "ORD",
+      "forms": [
+        "dai-"
+      ],
+      "category": "nominal prefix",
+      "gakko_bunpo_equivalent": [
+        "ダイ",
+        "第"
+      ],
+      "grammatical_function_en": "ordinal",
+      "grammatical_function_ja": "序数",
+      "grammatical_function_zh": "序数"
+    },
+    {
+      "id": "T22-PLU-001",
+      "gloss": "PLU",
+      "forms": [
+        "-tati",
+        "-domo",
+        "-ra",
+        "‡-gata"
+      ],
+      "category": "nominal suffix",
+      "gakko_bunpo_equivalent": [
+        "タチ"
+      ],
+      "grammatical_function_en": "pluralizer",
+      "grammatical_function_ja": "複数",
+      "grammatical_function_zh": "复数"
+    },
+    {
+      "id": "T22-CLF-001",
+      "gloss": "CLF",
+      "forms": [
+        "-tu",
+        "-ka",
+        "‡-piki",
+        "‡-niN",
+        "‡-do",
+        "‡-tai…"
+      ],
+      "category": "nominal suffix",
+      "gakko_bunpo_equivalent": [
+        "ツ",
+        "カ",
+        "ヒキ",
+        "ニン",
+        "ド",
+        "タイ"
+      ],
+      "grammatical_function_en": "classifier",
+      "grammatical_function_ja": "助数詞",
+      "grammatical_function_zh": "量词"
+    },
+    {
+      "id": "T22-TTL-001",
+      "gloss": "TTL",
+      "forms": [
+        "‡-sama",
+        "‡-dono",
+        "‡-doN",
+        "‡-gimi",
+        "‡-nusi…"
+      ],
+      "category": "nominal suffix",
+      "gakko_bunpo_equivalent": [
+        "サマ",
+        "ドノ",
+        "ドン",
+        "ギミ",
+        "ヌシ"
+      ],
+      "grammatical_function_en": "title (honorific)",
+      "grammatical_function_ja": "敬称",
+      "grammatical_function_zh": "尊称/敬称"
+    },
+    {
+      "id": "T22-ORD-001",
+      "gloss": "ORD",
+      "forms": [
+        "‡-me"
+      ],
+      "category": "nominal suffix",
+      "gakko_bunpo_equivalent": [
+        "メ"
+      ],
+      "grammatical_function_en": "ordinal suffix",
+      "grammatical_function_ja": "序数",
+      "grammatical_function_zh": "序数"
+    },
+    {
+      "id": "T22-SIM-001",
+      "gloss": "SIM",
+      "forms": [
+        "-nagara"
+      ],
+      "category": "nominal suffix",
+      "gakko_bunpo_equivalent": [
+        "ナガラ"
+      ],
+      "grammatical_function_en": "simultaneous",
+      "grammatical_function_ja": "平行",
+      "grammatical_function_zh": "同时"
+    },
+    {
+      "id": "T22-TND-001",
+      "gloss": "TND",
+      "forms": [
+        "‡-gati"
+      ],
+      "category": "nominal suffix",
+      "gakko_bunpo_equivalent": [
+        "ガチ"
+      ],
+      "grammatical_function_en": "tendential",
+      "grammatical_function_ja": "傾向",
+      "grammatical_function_zh": "倾向"
+    }
+  ]
+}

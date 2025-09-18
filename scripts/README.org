@@ -1,0 +1,26 @@
+#+title:  Scripts for automated used glossing in json format document
+#+author: idiig
+* =generate_available_glosses=
+  This script use regex to extract glosses from annotated text field
+  in json document.
+
+  The output is as follows:
+
+  #+begin_src json
+    [
+        {
+    	"abbreviation": "1SG",
+    	"meaning-en": "",
+    	"meaning-zh": "",
+    	"meaning-ja": ""
+        },
+        {
+    	"abbreviation": "CJT",
+    	"meaning-en": "",
+    	"meaning-zh": "",
+    	"meaning-ja": ""
+        },
+        ...
+    ]
+  #+end_src
+* 

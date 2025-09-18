@@ -1,0 +1,14 @@
+#+title: Zisk (2024) 的古典日语形态素列表的 JSON 格式
+
+[[file:zisk-gloss-conventions.json]] is a JSON format for glossing
+Classical Japanese texts, following established linguistic
+conventions.
+
+- [[https://researchmap.jp/mzisk/published_papers/42178558][Zisk, Matthew (2023). “Glossing Glosses: Methods for Transcribing
+  and Glossing Japanese Kundoku Texts.” In Franck Cinato et
+  al. (eds.), Glossing Practice: Comparative Perspectives,
+  pp. 47–82. Lexington Books.]]
+- [[https://researchmap.jp/mzisk/misc/47645778][ジスク マシュー (Zisk, Matthew) (2024). 古代日本語と現代日本語の機能
+  形態素リスト (2024.09.10).]]
+
+

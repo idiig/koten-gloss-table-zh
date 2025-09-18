@@ -5,14 +5,17 @@ This repository provides a JSON format for glossing Classical Japanese
 texts, following established linguistic conventions.
 
 Based on the following references:
-- [[https://www.eva.mpg.de/lingua/resources/glossing-rules.php][Max Planck Institute for Evolutionary Anthropology Department of
-  Linguistics (2015): Leipzig Glossing Rules: Conventions for
-  interlinear morpheme-by-morpheme glosses]]
-- [[https://researchmap.jp/mzisk/published_papers/42178558][Zisk, Matthew. 2023. “Glossing Glosses: Methods for Transcribing and
-  Glossing Japanese Kundoku Texts”. In: Cinato, Franck et al. (eds.)
-  Glossing Practice: Comparative Perspectives, pp. 47-82. Lexington
-  Books.]]
-- [[https://michinorishimoji.github.io/searchgloss/][下地理則 (2025) SearchGloss (DOI: 10.5281/zenodo.16419404) Version
-  1.0.]]
+
+- [[https://www.eva.mpg.de/lingua/resources/glossing-rules.php][Max Planck Institute for Evolutionary Anthropology, Department of
+  Linguistics (2015). Leipzig Glossing Rules: Conventions for
+  interlinear morpheme-by-morpheme glosses.]]
+- [[https://researchmap.jp/mzisk/published_papers/42178558][Zisk, Matthew (2023). “Glossing Glosses: Methods for Transcribing
+  and Glossing Japanese Kundoku Texts.” In Franck Cinato et
+  al. (eds.), Glossing Practice: Comparative Perspectives,
+  pp. 47–82. Lexington Books.]]
+- [[https://researchmap.jp/mzisk/misc/47645778][ジスク マシュー (Zisk, Matthew) (2024). 古代日本語と現代日本語の機能
+  形態素リスト (2024.09.10).]]
+- [[https://michinorishimoji.github.io/searchgloss/][下地 理則 (Shimoji, Michinori) (2025). SearchGloss (Version
+  1.0). DOI: 10.5281/zenodo.16419404.]]
 
 This is for personal use. Use at your own risk.  
