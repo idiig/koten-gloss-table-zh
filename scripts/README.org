@@ -129,7 +129,7 @@ See example below
   #+end_src
 #+end_details
 
-** Prossure
+** Process
 *** Detect gloss abbvreviations
 For each glossed sentence, such as:
 #+begin_example
@@ -350,7 +350,7 @@ See example below
   in json document.
 
 ** INPUT: A json file with glossing
-** Prossure 
+** Process 
 *** Detect gloss abbvreviations
 For each glossed sentence, such as:
 #+begin_example
