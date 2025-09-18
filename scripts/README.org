@@ -345,8 +345,6 @@ See example below
   fi
 #+end_src
 #+end_details
-
-
 * =fill_glossary.sh=
   This script use regex to extract glosses from annotated text field
   in json document.

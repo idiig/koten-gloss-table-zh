@@ -20,4 +20,9 @@ Based on the following references:
 - [[https://michinorishimoji.github.io/searchgloss/][下地 理則 (Shimoji, Michinori) (2025). SearchGloss (Version
   1.0). DOI: 10.5281/zenodo.16419404.]]
 
-This is originally for personal use. Use at your own risk.  
+This is originally for personal use. Use at your own risk.
+
+* Usage workflow (for idiig/tosa-translation project)
+** Generate general glossary for specific documents with Zisk's list
+** Manually deal unavailable glossary entries => glossary.json
+** Use glossary.json to fill in missing =glossary_abbreviations= in the main document
