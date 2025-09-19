@@ -369,9 +369,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "PN",
@@ -2678,9 +2678,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "PUR",
@@ -2902,9 +2902,9 @@
           },
           {
             "gloss": "ANL",
-            "grammatical_function_en": "negative-irrealis analogical",
-            "grammatical_function_ja": "未実現類推",
-            "grammatical_function_zh": "未实现类推"
+            "grammatical_function_en": "expanded analogical",
+            "grammatical_function_ja": "添加類推",
+            "grammatical_function_zh": "扩展类推"
           },
           {
             "gloss": "CCL",
@@ -3126,9 +3126,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "PUR",
@@ -5183,9 +5183,9 @@
           },
           {
             "gloss": "CSL",
-            "grammatical_function_en": "causal nominalizer",
-            "grammatical_function_ja": "原因名詞化辞",
-            "grammatical_function_zh": "原因名词化辞"
+            "grammatical_function_en": "causal",
+            "grammatical_function_ja": "原因",
+            "grammatical_function_zh": "原因"
           },
           {
             "gloss": "GEN",
@@ -5213,9 +5213,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "RET",
@@ -5671,9 +5671,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "PST",
@@ -8786,9 +8786,9 @@
           },
           {
             "gloss": "CSL",
-            "grammatical_function_en": "causal nominalizer",
-            "grammatical_function_ja": "原因名詞化辞",
-            "grammatical_function_zh": "原因名词化辞"
+            "grammatical_function_en": "causal",
+            "grammatical_function_ja": "原因",
+            "grammatical_function_zh": "原因"
           },
           {
             "gloss": "EMP",
@@ -9392,9 +9392,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "PLU",
@@ -9934,9 +9934,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           }
         ],
         "translation-zh-natural": "元旦这天，我们仍停泊在同一个地方。"
@@ -10571,9 +10571,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "THM",
@@ -10702,9 +10702,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           }
         ],
         "translation-zh-natural": "（元旦）只能吸着用压制工艺腌渍而成的腌鮎鱼的嘴。"
@@ -10858,9 +10858,9 @@
           },
           {
             "gloss": "NML",
-            "grammatical_function_en": "nominalizer",
-            "grammatical_function_ja": "名詞化辞",
-            "grammatical_function_zh": "名词化辞"
+            "grammatical_function_en": "qualitative nominalizer",
+            "grammatical_function_ja": "質的名詞化辞",
+            "grammatical_function_zh": "质的名词化辞"
           },
           {
             "gloss": "THM",

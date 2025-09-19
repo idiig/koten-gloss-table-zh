@@ -1,11 +1,9 @@
 #+title:  Scripts for automated used glossing in json format document
 #+author: idiig
-* =generate_glossary.sh=
+* =generate_glossary.sh= <<sec:script-1>>
 This script use regex to extract glosses from annotated text field
   in json document.
-
-** INPUT: A json file with glossing
-
+** INPUT: A json file with glossing <<sec:data-example>>
 #+begin_details
 #+begin_summary
 See example below
@@ -128,9 +126,8 @@ See example below
   }
   #+end_src
 #+end_details
-
 ** Process
-*** Detect gloss abbvreviations
+*** Detect gloss abbvreviations <<sec:step-1>>
 For each glossed sentence, such as:
 #+begin_example
   "gloss-morph-<lang_abbv>": "男人=IFO 做-CCL HEV-ADN 日记"
@@ -147,12 +144,49 @@ The script will extract glossing elements, such as:
   CCL
   ADN
 #+end_example
+**** Snippets
+***** Symbol helpers (=jq-symbol-helpers=)
+#+begin_src jq :noweb-ref jq-symbol-helpers
+  # is_bracket_char: single-char bracket? (Unicode Ps / Pe)
+  def is_bracket_char($c): ($c | test("^(\\p{Ps}|\\p{Pe})$"));
 
-*** Search source ([[../sources/zisk-gloss-conventions-2024.json]])
+  # is_symbol_token: token becomes "symbol" iff removing all \p{P} and \p{S} leaves empty
+  def is_symbol_token($s): ($s | gsub("[\\p{P}\\p{S}]"; "") == "");
+#+end_src
+***** Token detection (=jq-detect-tokens=)
+#+begin_src jq :noweb-ref jq-detect-tokens
+  # detect_tokens($x):
+  # - Codes: [A-Z0-9]+ and must contain >= 2 uppercase letters (e.g., ADN/AOR2/1SG/3PL)
+  # - Symbols: ALL \p{P} or \p{S} chars, EXCEPT brackets (Ps/Pe)
+  def detect_tokens($x):
+    ( $x
+      | [ .. | objects | to_entries[] | select(.key | startswith("gloss-morph-")) | .value ]
+      | map(tostring) | join(" ")
+    ) as $t
+    | (
+      # Codes
+      ( $t
+        | gsub("[^A-Za-z0-9]+"; " ")
+        | split(" ")
+        | map(select( (test("^[A-Z0-9]+$"))
+  		      and ( (gsub("[^A-Z]";"") | length) >= 2 ) ))
+      )
+        +
+        # Symbols except brackets
+        ( $t
+          | gsub("[^\\p{P}\\p{S}]"; "")
+          | explode
+          | map([.] | implode)
+          | map(select( is_bracket_char(.) | not ))
+        )
+    )
+    | unique
+    | sort ;
+#+end_src
+*** Search source ([[../sources/zisk-gloss-conventions-2024.json]]) <<sec:step-2>>
 The source of abbreviations is from [[../sources/zisk-gloss-conventions.json][zisk-gloss-conventions.json]], which
 is a JSON file containing a list of abbreviations and their meanings
 in multiple languages.
-
 #+begin_details
 #+begin_summary
 See example below
@@ -203,15 +237,73 @@ See example below
   }
 #+end_src
 #+end_details
-
+**** Snippets
+***** Source
+#+begin_src jq :noweb-ref source-zisk
+  ../sources/zisk-gloss-conventions-2024.json
+#+end_src
+***** Lookup helpers (=jq-lookup-map=)
+The script will lookup each detected token in the source file. If
+found, use the corresponding record; if not found, use a null-valued
+record.
+#+begin_src jq :noweb-ref jq-lookup-map
+  # map_token($c): lookup via SRCDICT; fall back to null-valued record
+  def map_token($c):
+    ( SRCDICT[$c] )
+      // {gloss: $c,
+  	grammatical_function_en: null,
+  	grammatical_function_ja: null,
+  	grammatical_function_zh: null};
+#+end_src
+***** Unmatched filter (=jq-unmatched-filter=)
+The script will log unmatched tokens, with an option to exclude symbols.
+#+begin_src jq :noweb-ref jq-unmatched-filter
+  # unmatched_glosses($arr; $logSymbols):
+  # - $arr: array of gloss records
+  # - $logSymbols: 1 to include symbol tokens in unmatched, 0 to exclude
+  def unmatched_glosses($arr; $logSymbols):
+    ( $arr
+      | map(select(
+  	      (.grammatical_function_en==null)
+  		and (.grammatical_function_ja==null)
+  		and (.grammatical_function_zh==null)
+  	    ))
+      | ( if $logSymbols==1
+          then .
+          else map(select( ( .gloss | is_symbol_token(.) ) | not ))
+  	end )
+      | map(.gloss)
+    );
+#+end_src
+***** Source dictionary (=jq-srcdict-from-zisk=)
+The script will load the source file as a dictionary for fast lookup.
+#+begin_src jq :noweb-ref jq-srcdict-from-zisk
+  # Expect: SRC is an object that contains .glosses[]
+  def SRCDICT:
+    (reduce (SRC.glosses[]? // empty) as $g ({}; .[$g.gloss] =
+  						{ gloss: $g.gloss,
+  						  grammatical_function_en: ($g.grammatical_function_en // null),
+  						  grammatical_function_ja: ($g.grammatical_function_ja // null),
+  						  grammatical_function_zh: ($g.grammatical_function_zh // null)
+  						}));
+#+end_src
 *** Generate glossary
-*** Script body
-
-#+begin_details
-#+begin_summary
-See example below
-#+end_summary
-#+begin_src shell :tangle ./generate_glossary.sh
+Finally, the script will generate the glossary used in the main document.
+**** Snippets
+#+begin_src jq :noweb-ref jq-build-global-output
+  # Build result (bind unmatched once)
+  ( detect_tokens(.) | map(map_token(.)) | unique_by(.gloss) | sort_by(.gloss) ) as $gls
+    | ( unmatched_glosses($gls; $logSymbols) ) as $um
+    | { glossary: $gls,
+        log: {
+  	  total: ($gls | length),
+  	  unmatched_count: ($um | length),
+  	  unmatched: $um
+  	}
+      }
+#+end_src
+*** Script main body
+#+begin_src shell :tangle generate_glossary.sh :noweb yes 
   #!/usr/bin/env bash
   set -euo pipefail
 
@@ -219,7 +311,7 @@ See example below
   # Global glossary from an annotated JSON:
   # - Tokens = codes of [A-Z0-9]+ with >=2 uppercase letters (ADN, AOR2, 1SG, 3PL, ...)
   #            + ALL Unicode punctuation/symbol chars EXCEPT brackets (Ps/Pe excluded)
-  # - Deduplicate by `gloss`, sort, enrich from SOURCE
+  # - Deduplicate by `gloss`, sort, enrich from SOURCE (Zisk-style JSON with .glosses[])
   # - Unmatched keep null fields
   # - Logs: by default count symbols in unmatched; use --no-log-symbols to exclude them
   #
@@ -231,22 +323,23 @@ See example below
   VERBOSE=0
   LOG_SYMBOLS=1   # include symbols in unmatched logging by default
   INPUT=""
-  SRC_DEFAULT="../sources/zisk-gloss-conventions-2024.json"
+  SRC_DEFAULT="<<source-zisk>>"
   SRC="$SRC_DEFAULT"
 
+  # --- parse args ---
   ARGS=()
   for a in "$@"; do
-    case "$a" in
-      --quiet)           QUIET=1 ;;
-      --verbose)         VERBOSE=1 ;;
-      --no-log-symbols)  LOG_SYMBOLS=0 ;;
-      ,*) ARGS+=("$a") ;;
-    esac
+      case "$a" in
+  	--quiet)           QUIET=1 ;;
+  	--verbose)         VERBOSE=1 ;;
+  	--no-log-symbols)  LOG_SYMBOLS=0 ;;
+  	,*) ARGS+=("$a") ;;
+      esac
   done
 
   if [[ ${#ARGS[@]} -lt 1 ]]; then
-    echo "Usage: $0 INPUT.json [SOURCE.json] [--quiet|--verbose|--no-log-symbols]" >&2
-    exit 1
+      echo "Usage: $0 INPUT.json [SOURCE.json] [--quiet|--verbose|--no-log-symbols]" >&2
+      exit 1
   fi
   INPUT="${ARGS[0]}"
   [[ ${#ARGS[@]} -ge 2 ]] && SRC="${ARGS[1]}"
@@ -255,125 +348,64 @@ See example below
   [[ -f "$INPUT" ]] || { echo "Error: input not found: $INPUT" >&2; exit 1; }
   [[ -f "$SRC"   ]] || { echo "Error: source not found: $SRC" >&2; exit 1; }
 
+  # --- one jq pass: build {glossary, log} ---
   PACKED="$(
     jq --argjson logSymbols "$LOG_SYMBOLS" --slurpfile src "$SRC" '
-      # Load source as object
+      # ===== shared helpers =====
+      <<jq-symbol-helpers>>
+
+      # Source (Zisk-style object with .glosses[])
       def SRC: ( ($src // []) | if length>0 then .[0] else {} end );
 
-      # Helper: is this single-char string a bracket (Unicode Ps or Pe)?
-      # NOTE: no "u" modifier; many jq builds already treat patterns as Unicode.
-      def is_bracket_char($c): ($c | test("^(\\p{Ps}|\\p{Pe})$"));
+      # Build SRCDICT from Zisk source
+      <<jq-srcdict-from-zisk>>
 
-      # Helper: token is pure symbol iff removing all \p{P} and \p{S} leaves empty
-      def is_symbol_token($s): ($s | gsub("[\\p{P}\\p{S}]"; "") == "");
+      # Map token via SRCDICT; if missing, produce null-valued record
+      <<jq-lookup-map>>
 
-      # Extract tokens:
-      #  - Codes: [A-Z0-9]+ with >=2 uppercase letters (captures ADN, AOR2, 1SG, 3PL, ...)
-      #  - Symbols: all \p{P} or \p{S} chars, but EXCLUDE brackets (Ps/Pe)
-      def detect_tokens($x):
-        ( $x
-          | [ .. | objects | to_entries[] | select(.key | startswith("gloss-morph-")) | .value ]
-          | map(tostring) | join(" ")
-        ) as $t
-        | (
-            # Codes
-            ( $t
-              | gsub("[^A-Za-z0-9]+"; " ")
-              | split(" ")
-              | map(select( (test("^[A-Z0-9]+$"))
-                             and ( (gsub("[^A-Z]";"") | length) >= 2 ) ))
-            )
-            +
-            # Symbols except brackets
-            ( $t
-              | gsub("[^\\p{P}\\p{S}]"; "")  # keep punctuation+symbols
-              | explode
-              | map([.] | implode)
-              | map(select( is_bracket_char(.) | not ))
-            )
-          )
-        | unique
-        | sort ;
+      # Token detection (whole document): codes + symbols excluding brackets
+      <<jq-detect-tokens>>
 
-      # Map token to record (null-valued if not found)
-      def lookup_obj($c):
-        (
-          SRC.glosses[]?
-          | select(.gloss == $c)
-          | {gloss, grammatical_function_en, grammatical_function_ja, grammatical_function_zh}
-        )
-        // {gloss: $c, grammatical_function_en: null, grammatical_function_ja: null, grammatical_function_zh: null};
+      # Unmatched extraction (optionally excluding symbols from logs)
+      <<jq-unmatched-filter>>
 
-      ( detect_tokens(.) | map(lookup_obj(.)) | unique_by(.gloss) | sort_by(.gloss) ) as $gls
+      # Build result (bind unmatched once)
+      <<jq-build-global-output>>
 
-      | ( $gls
-          | map(select(
-              (.grammatical_function_en==null)
-              and (.grammatical_function_ja==null)
-              and (.grammatical_function_zh==null)
-            ))
-          | ( if $logSymbols==1
-              then .                       # include symbols in unmatched logging
-              else map(select( ( .gloss | is_symbol_token(.) ) | not ))
-            end )
-          | map(.gloss)
-        ) as $unmatched
-
-      | { glossary: $gls,
-          log: { total: ($gls|length),
-                 unmatched_count: ($unmatched|length),
-                 unmatched: $unmatched } }
     ' "$INPUT"
   )"
 
-  # Emit glossary list
+  # --- stdout: glossary array ---
   echo "$PACKED" | jq '.glossary'
 
-  # Conditional logs
+  # --- stderr: conditional logs ---
   if [[ "$QUIET" -eq 0 || "$VERBOSE" -eq 1 ]]; then
-    total=$(echo "$PACKED" | jq '.log.total')
-    umc=$(echo "$PACKED" | jq '.log.unmatched_count')
-    if [[ "$VERBOSE" -eq 1 || "$umc" -gt 0 ]]; then
-      echo "[INFO] Total tokens: $total" >&2
-      echo "[INFO] Unmatched count: $umc" >&2
-      if [[ "$umc" -gt 0 ]]; then
-        echo "$PACKED" | jq -r '.log.unmatched | join(",")' | while read -r line; do
-          [[ -n "$line" ]] && echo "[WARN] Unmatched tokens: $line" >&2
-        done
+      total=$(echo "$PACKED" | jq '.log.total')
+      umc=$(echo "$PACKED" | jq '.log.unmatched_count')
+      if [[ "$VERBOSE" -eq 1 || "$umc" -gt 0 ]]; then
+  	echo "[INFO] Total tokens: $total" >&2
+  	echo "[INFO] Unmatched count: $umc" >&2
+  	if [[ "$umc" -gt 0 ]]; then
+  	    echo "$PACKED" | jq -r '.log.unmatched | join(",")' | while read -r line; do
+  		[[ -n "$line" ]] && echo "[WARN] Unmatched tokens: $line" >&2
+  	    done
+  	fi
       fi
-    fi
   fi
 #+end_src
-#+end_details
-* =fill_glossary.sh=
+*** Manual post-processing
+For unmatched tokens, you can manually add entries to the source.
+* =fill_glossary.sh= <<sec:script-2>>
   This script use regex to extract glosses from annotated text field
   in json document.
-
 ** INPUT: A json file with glossing
+See [[sec:data-example]].
 ** Process 
 *** Detect gloss abbvreviations
-For each glossed sentence, such as:
-#+begin_example
-  "gloss-morph-<lang_abbv>": "男人=IFO 做-CCL HEV-ADN 日记"
-#+end_example
-The script will extract glossing elements, such as:
-#+begin_example
-  Symbols and numbers:
-  =
-  -
-  
-  Abbreviations in upper case:
-  IFO
-  HEV
-  CCL
-  ADN
-#+end_example
-
+See [[sec:step-1]].
 *** Search source ([[../glossary.json]])
-The source of abbreviations is from [[../sources/zisk-gloss-conventions.json][zisk-gloss-conventions.json]], which
-is a JSON file containing a list of abbreviations and their meanings
-in multiple languages.
-
+Similar to [[sec:step-2]], but the source file is the output of
+[[sec:script-1]]. Exemples is as follows:
 #+begin_details
 #+begin_summary
 See example below
@@ -408,9 +440,24 @@ See example below
   ]
 #+end_src
 #+end_details
-
+**** Snippets
+***** Source
+#+begin_src jq :noweb-ref source-glossary
+  ../glossary.json
+  #+end_src
+***** =jq-srcdict-from-array=
+The script will load the source file as a dictionary for fast lookup.
+#+begin_src jq :noweb-ref jq-srcdict-from-array
+  # Expect: SRCARR is an array of gloss records
+  def SRCDICT:
+    (reduce (SRCARR[]? // empty) as $g ({}; .[$g.gloss] =
+  					   { gloss: $g.gloss,
+  					     grammatical_function_en: ($g.grammatical_function_en // null),
+  					     grammatical_function_ja: ($g.grammatical_function_ja // null),
+  					     grammatical_function_zh: ($g.grammatical_function_zh // null)
+  					   }));
+#+end_src
 *** Output to =glossary-abbreviations= field
-
 For each detected glossing element, the script will fill the fields
 and output the contents into the original json file's
 =glossary-abbreviations= field, such as:
@@ -435,14 +482,56 @@ and output the contents into the original json file's
     ]
     ...
   #+end_src
-
-*** Script body
-
-#+begin_details
-#+begin_summary
-See example below
-#+end_summary
-#+begin_src shell :tangle ./fill_glossary.sh
+**** Snippets
+***** Annotate per paragraph (=jq-annotate-per-paragraph=)
+#+begin_src jq :noweb-ref jq-annotate-per-paragraph
+  # Update only objects that already have the key, preserving position
+  def annotate:
+    if type=="object" then
+      if has("glossary-abbreviations") then
+        . as $o
+        | .["glossary-abbreviations"]
+           = ( detect_tokens($o)
+               | map(map_token(.))
+               | unique_by(.gloss) )
+      else
+        with_entries(.value |= annotate)
+      end
+    elif type=="array" then
+      map(annotate)
+    else . end;
+#+end_src
+***** Collect logs per paragraph (=jq-collect-logs-per-paragraph=)
+#+begin_src jq :noweb-ref jq-collect-logs-per-paragraph
+  # Collect per-paragraph unmatched after annotation
+  def collect_logs:
+    if type=="object" then
+      (
+        if has("glossary-abbreviations") and (.["glossary-abbreviations"] | type=="array") then
+          . as $obj
+          | (.["glossary-abbreviations"]) as $arr
+          | ( unmatched_glosses($arr; $logSymbols) ) as $unmatched
+          | [{
+                id: ($obj.id // null),
+                unmatched_count: ($unmatched | length),
+                unmatched: $unmatched
+              }]
+        else [] end
+      )
+        + ( [ .[]? | collect_logs ] | add // [] )
+    elif type=="array" then
+      ( [ .[] | collect_logs ] | add // [] )
+    else [] end;
+#+end_src
+***** Pack all together (=jq-pack-per-paragraph=)
+#+begin_src jq :noweb-ref jq-pack-per-paragraph
+  ( . as $orig
+    | ( $orig | annotate ) as $doc
+    | { doc: $doc, log: ($doc | collect_logs) }
+  )
+#+end_src
+*** Script main body
+#+begin_src bash :tangle ./fill_glossary.sh :noweb yes
   #!/usr/bin/env bash
   set -euo pipefail
 
@@ -468,22 +557,22 @@ See example below
   VERBOSE=0
   LOG_SYMBOLS=1   # include symbols in unmatched logging by default
   INPUT=""
-  SRC_DEFAULT="../glossary.json"
+  SRC_DEFAULT="<<source-glossary>>"
   SRC="$SRC_DEFAULT"
 
   ARGS=()
   for a in "$@"; do
-    case "$a" in
-      --quiet)           QUIET=1 ;;
-      --verbose)         VERBOSE=1 ;;
-      --no-log-symbols)  LOG_SYMBOLS=0 ;;
-      ,*) ARGS+=("$a") ;;
-    esac
+      case "$a" in
+  	--quiet)           QUIET=1 ;;
+  	--verbose)         VERBOSE=1 ;;
+  	--no-log-symbols)  LOG_SYMBOLS=0 ;;
+  	,*) ARGS+=("$a") ;;   # non-option args
+      esac
   done
 
   if [[ ${#ARGS[@]} -lt 1 ]]; then
-    echo "Usage: $0 INPUT.json [GLOSSARY.json] [--quiet|--verbose|--no-log-symbols]" >&2
-    exit 1
+      echo "Usage: $0 INPUT.json [GLOSSARY.json] [--quiet|--verbose|--no-log-symbols]" >&2
+      exit 1
   fi
   INPUT="${ARGS[0]}"
   [[ ${#ARGS[@]} -ge 2 ]] && SRC="${ARGS[1]}"
@@ -494,98 +583,30 @@ See example below
 
   PACKED="$(
     jq --argjson logSymbols "$LOG_SYMBOLS" --slurpfile src "$SRC" '
-      # Source is an array of gloss objects (first slurped element).
+      # ===== shared helpers & dict =====
+      <<jq-symbol-helpers>>
+
+      # Source is an array of gloss records (first slurped element)
       def SRCARR: ( ($src // []) | if length>0 then .[0] else [] end );
 
-      # Build a lookup dict: { GLOSS: {gloss, grammatical_function_*} }
-      def SRCDICT:
-        (reduce (SRCARR[]? // empty) as $g ({}; .[$g.gloss] = {
-          gloss: $g.gloss,
-          grammatical_function_en: ($g.grammatical_function_en // null),
-          grammatical_function_ja: ($g.grammatical_function_ja // null),
-          grammatical_function_zh: ($g.grammatical_function_zh // null)
-        }));
+      # Build SRCDICT from SRCARR
+      <<jq-srcdict-from-array>>
 
-      # Helpers
-      def is_bracket_char($c): ($c | test("^(\\p{Ps}|\\p{Pe})$"));
-      def is_symbol_token($s): ($s | gsub("[\\p{P}\\p{S}]"; "") == "");
+      # Map token via SRCDICT; if missing, produce null-valued record
+      <<jq-lookup-map>>
 
-      # Extract tokens from an object (its subtree):
-      #  - Codes + Symbols (excluding brackets)
-      def detect_tokens($x):
-        ( $x
-          | [ .. | objects | to_entries[] | select(.key | startswith("gloss-morph-")) | .value ]
-          | map(tostring) | join(" ")
-        ) as $t
-        | (
-            # Codes: [A-Z0-9]+ with >=2 uppercase letters
-            ( $t
-              | gsub("[^A-Za-z0-9]+"; " ")
-              | split(" ")
-              | map(select( (test("^[A-Z0-9]+$"))
-                             and ( (gsub("[^A-Z]";"") | length) >= 2 ) ))
-            )
-            +
-            # Symbols except brackets
-            ( $t
-              | gsub("[^\\p{P}\\p{S}]"; "")
-              | explode
-              | map([.] | implode)
-              | map(select( is_bracket_char(.) | not ))
-            )
-          )
-        | unique
-        | sort ;
+      # Token detection (codes + symbols excluding brackets)
+      <<jq-detect-tokens>>
 
-      # Map token via SRCDICT; if missing, create null-valued entry
-      def map_token($c):
-        ( SRCDICT[$c] ) // {gloss: $c, grammatical_function_en: null, grammatical_function_ja: null, grammatical_function_zh: null};
+      # Unmatched extraction (optionally excluding symbols from logs)
+      <<jq-unmatched-filter>>
 
-      # Update only objects that already have the key, preserving position
-      def annotate:
-        if type=="object" then
-          if has("glossary-abbreviations") then
-            . as $o
-            | .["glossary-abbreviations"]
-              = ( detect_tokens($o) | map(map_token(.)) | unique_by(.gloss) )
-          else
-            with_entries(.value |= annotate)
-          end
-        elif type=="array" then map(annotate) else . end;
+      # Per-paragraph annotate & collect logs
+      <<jq-annotate-per-paragraph>>
+      <<jq-collect-logs-per-paragraph>>
 
-      # Collect per-paragraph unmatched after annotation
-      def collect_logs:
-        if type=="object" then
-          (
-            if has("glossary-abbreviations") and (.["glossary-abbreviations"] | type=="array") then
-              . as $obj
-              | (.["glossary-abbreviations"]) as $arr
-              | ($arr
-                  | map(select(
-                      (.grammatical_function_en==null)
-                      and (.grammatical_function_ja==null)
-                      and (.grammatical_function_zh==null)
-                    ))
-                  | ( if $logSymbols==1
-                      then .
-                      else map(select( ( .gloss | is_symbol_token(.) ) | not ))
-                    end )
-                  | map(.gloss)
-                ) as $unmatched
-              | [{
-                  id: ($obj.id // null),
-                  unmatched_count: ($unmatched | length),
-                  unmatched: $unmatched
-                }]
-            else [] end
-          )
-          + ( [ .[]? | collect_logs ] | add // [] )
-        elif type=="array" then ( [ .[] | collect_logs ] | add // [] ) else [] end;
-
-      ( . as $orig
-      | ( $orig | annotate ) as $doc
-      | { doc: $doc, log: ($doc | collect_logs) }
-      )
+      # Pack {doc, log}
+      <<jq-pack-per-paragraph>>
     ' "$INPUT"
   )"
 
@@ -594,27 +615,27 @@ See example below
 
   # STDERR: logs (only when unmatched exist or --verbose)
   if [[ "$QUIET" -eq 0 || "$VERBOSE" -eq 1 ]]; then
-    total_unm=$(echo "$PACKED" | jq '[.log[].unmatched_count] | add // 0')
-    if [[ "$VERBOSE" -eq 1 || "$total_unm" -gt 0 ]]; then
-      total_para=$(echo "$PACKED" | jq '.log | length')
-      echo "[INFO] Paragraphs updated: $total_para" >&2
-      echo "[INFO] Unmatched entries (sum): $total_unm" >&2
-      if [[ "$total_unm" -gt 0 ]]; then
-        idx=0
-        echo "$PACKED" | jq -r '
+      total_unm=$(echo "$PACKED" | jq '[.log[].unmatched_count] | add // 0')
+      if [[ "$VERBOSE" -eq 1 || "$total_unm" -gt 0 ]]; then
+  	total_para=$(echo "$PACKED" | jq '.log | length')
+  	echo "[INFO] Paragraphs updated: $total_para" >&2
+  	echo "[INFO] Unmatched entries (sum): $total_unm" >&2
+  	if [[ "$total_unm" -gt 0 ]]; then
+  	    idx=0
+  	    echo "$PACKED" | jq -r '
           .log[] | [
             ( .id // "N/A" ),
             .unmatched_count,
             ( ( .unmatched // [] ) | join(",") )
           ] | @tsv
         ' | while IFS=$'\t' read -r pid cunm unmlist; do
-          [[ "$pid" == "N/A" ]] && pid="idx:$idx"
-          echo "[WARN] Paragraph ${pid} unmatched=${cunm}${unmlist:+  (unmatched: ${unmlist})}" >&2
-          idx=$((idx+1))
-        done
+  		[[ "$pid" == "N/A" ]] && pid="idx:$idx"
+  		echo "[WARN] Paragraph ${pid} unmatched=${cunm}${unmlist:+  (unmatched: ${unmlist})}" >&2
+  		idx=$((idx+1))
+  	    done
+  	fi
       fi
-    fi
   fi
 #+end_src
-#+end_details
+
 
