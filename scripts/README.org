@@ -1,4 +1,4 @@
-#+title:  Scripts for automated used glossing in json format document
+#+title:  Scripts for Generating and Filling Glossary Abbreviations
 #+author: idiig
 #+OPTIONS: toc:4
 #+TOC: headlines 4
