@@ -23,6 +23,6 @@ Based on the following references:
 This is originally for personal use. Use at your own risk.
 
 * Usage workflow (for idiig/tosa-translation project)
-** Generate general glossary for specific documents with Zisk's list
-** Manually deal unavailable glossary entries => glossary.json
-** Use glossary.json to fill in missing =glossary_abbreviations= in the main document
+- Generate general glossary for specific documents with Zisk's list
+- Manually deal unavailable glossary entries => glossary.json
+- Use glossary.json to fill in missing =glossary_abbreviations= in the main document
