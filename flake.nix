@@ -32,7 +32,7 @@
           options.glossTools.sourceInputName = lib.mkOption {
             type = lib.types.str;
             default = "gloss-tools";
-            description = "Input name used by the consumer to reference this flake.";
+            description = "Glossing tool for mapping interlinear glosses to Zisk JSON format.";
           };
 
           config.perSystem = { pkgs, ... }:
